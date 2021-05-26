@@ -9,21 +9,26 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /* appBar: AppBar(
         title: Text('My Title'),
-      ),
+      ), */
       body: SafeArea(
         child: LayoutBuilder(
           builder: (context, constraints) {
             if (constraints.maxWidth < 480) {
               // Anzeige für Mobilgeräte
-              return Column(
-                children: [
-                  buildContentBox(Colors.grey[800]),
-                  buildContentBox(Colors.grey[300]),
-                  buildContentBox(Colors.grey[400]),
-                  buildContentBox(Colors.grey[500]),
-                ],
+              return Scaffold(
+                appBar: AppBar(
+                  title: Text('Meine Mobilansicht'),
+                ),
+                body: Column(
+                  children: [
+                    buildContentBox(Colors.grey[800]),
+                    buildContentBox(Colors.grey[300]),
+                    buildContentBox(Colors.grey[400]),
+                    buildContentBox(Colors.grey[500]),
+                  ],
+                ),
               );
             } else if (constraints.maxWidth < 1440) {
               // Anzeige für Tablets und Mobile Phones im Landscape Modus
