@@ -62,27 +62,46 @@ class _HomePageState extends State<HomePage> {
               );
             } else {
               // Anzeige in Webansicht auf dem Desktop
-              return Column(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Row(
-                      children: [
-                        buildContentBox(Colors.grey[800]),
-                      ],
+              return Container(
+                child: Column(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Row(
+                        children: [
+                          buildContentBox(Colors.grey[800]),
+                        ],
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: Row(
-                      children: [
-                        buildContentBox(Colors.grey[500]),
-                        buildContentBox(Colors.grey[400]),
-                        buildContentBox(Colors.grey[300]),
-                      ],
+                    Expanded(
+                      flex: 3,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: Container(
+                              margin: EdgeInsets.all(4),
+                              decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 9,
+                            child: Row(
+                              children: [
+                                buildContentBox(Colors.grey[500]),
+                                buildContentBox(Colors.grey[400]),
+                                buildContentBox(Colors.grey[300]),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               );
             }
             // Ende des Bildschirmbreiten if-Statements
