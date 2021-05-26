@@ -18,11 +18,10 @@ class _HomePageState extends State<HomePage> {
             if (constraints.maxWidth < 480) {
               return Column(
                 children: [
-                  buildContentBox(),
-                  buildContentBox(),
-                  buildContentBox(),
-                  buildContentBox(),
-                  buildContentBox(),
+                  buildContentBox(Colors.grey[800]),
+                  buildContentBox(Colors.grey[300]),
+                  buildContentBox(Colors.grey[400]),
+                  buildContentBox(Colors.grey[500]),
                 ],
               );
             } else {
@@ -32,7 +31,7 @@ class _HomePageState extends State<HomePage> {
                     flex: 1,
                     child: Row(
                       children: [
-                        buildContentBox(),
+                        buildContentBox(Colors.grey[800]),
                       ],
                     ),
                   ),
@@ -40,9 +39,9 @@ class _HomePageState extends State<HomePage> {
                     flex: 4,
                     child: Row(
                       children: [
-                        buildContentBox(),
-                        buildContentBox(),
-                        buildContentBox(),
+                        buildContentBox(Colors.grey[300]),
+                        buildContentBox(Colors.grey[400]),
+                        buildContentBox(Colors.grey[500]),
                       ],
                     ),
                   ),
@@ -55,11 +54,11 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Expanded buildContentBox() {
+  Expanded buildContentBox(Color color) {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey[400],
+          color: color,
           borderRadius: BorderRadius.circular(6),
         ),
         margin: EdgeInsets.all(4),
