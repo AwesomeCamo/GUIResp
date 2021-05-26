@@ -16,6 +16,7 @@ class _HomePageState extends State<HomePage> {
         child: LayoutBuilder(
           builder: (context, constraints) {
             if (constraints.maxWidth < 480) {
+              // Anzeige für Mobilgeräte
               return Column(
                 children: [
                   buildContentBox(Colors.grey[800]),
@@ -24,7 +25,8 @@ class _HomePageState extends State<HomePage> {
                   buildContentBox(Colors.grey[500]),
                 ],
               );
-            } else {
+            } else if (constraints.maxWidth < 1440) {
+              // Anzeige für Tablets und Mobile Phones im Landscape Modus
               return Column(
                 children: [
                   Expanded(
@@ -36,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Expanded(
-                    flex: 4,
+                    flex: 3,
                     child: Row(
                       children: [
                         buildContentBox(Colors.grey[300]),
@@ -47,7 +49,32 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               );
-            } // Ende des Bildschirmbreiten if-Statements
+            } else {
+              // Anzeige in Webansicht auf dem Desktop
+              return Column(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Row(
+                      children: [
+                        buildContentBox(Colors.grey[800]),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Row(
+                      children: [
+                        buildContentBox(Colors.grey[500]),
+                        buildContentBox(Colors.grey[400]),
+                        buildContentBox(Colors.grey[300]),
+                      ],
+                    ),
+                  ),
+                ],
+              );
+            }
+            // Ende des Bildschirmbreiten if-Statements
           },
         ),
       ),
