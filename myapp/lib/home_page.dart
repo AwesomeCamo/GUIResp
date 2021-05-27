@@ -78,8 +78,31 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         children: [
                           Expanded(
+                            // Menüzeile an der linken Seite
                             flex: 1,
                             child: Container(
+                              child: Column(
+                                children: [
+                                  CreateMenuButton(
+                                    menuButtonIcon:
+                                        Icons.account_circle_rounded,
+                                    menuButtonText: 'Profil',
+                                  ),
+                                  CreateMenuButton(
+                                    menuButtonIcon: Icons.trending_up_rounded,
+                                    menuButtonText: 'Beliebt',
+                                  ),
+                                  CreateMenuButton(
+                                    menuButtonIcon:
+                                        Icons.bookmark_border_rounded,
+                                    menuButtonText: 'Bookmarked',
+                                  ),
+                                  CreateMenuButton(
+                                    menuButtonIcon: Icons.login_rounded,
+                                    menuButtonText: 'Login',
+                                  ),
+                                ],
+                              ),
                               margin: EdgeInsets.all(4),
                               decoration: BoxDecoration(
                                 color: Colors.orange[300],
@@ -88,7 +111,8 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Expanded(
-                            flex: 9,
+                            // gesamter Inhaltsbereich
+                            flex: 7,
                             child: Row(
                               children: [
                                 buildContentBox(Colors.grey[500]),

@@ -46,16 +46,26 @@ class CreateMenuButton extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () => print('button pressed'),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            menuButtonIcon,
-          ),
-          Text(menuButtonText),
-        ],
+    return Padding(
+      padding: EdgeInsets.fromLTRB(4, 4, 4, 0),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          primary: Colors.white, // Hintergrundfarbe der Menübuttons
+          onPrimary: Colors.black, // Schrift- und Iconfarbe
+        ),
+        onPressed: () => print('button pressed'),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Icon(
+              menuButtonIcon,
+            ),
+            Container(
+              child: Text(menuButtonText),
+              padding: EdgeInsets.all(20),
+            ),
+          ],
+        ),
       ),
     );
   }
