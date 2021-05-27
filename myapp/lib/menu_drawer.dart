@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/home_page.dart';
 
 class MenuDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
+      child: Column(
         children: <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
               color: Colors.orange[300],
             ),
-            child: Text('Menü'),
+            child: Container(
+              child: Text('Menü'),
+              width: double.infinity,
+            ),
           ),
           CreateMenuButton(
             menuButtonIcon: Icons.account_circle_rounded,
@@ -25,10 +28,17 @@ class MenuDrawer extends StatelessWidget {
             menuButtonIcon: Icons.bookmark_border_rounded,
             menuButtonText: 'Bookmarked',
           ),
+          Expanded(
+            // Spacer um LoginButton an den Boden der Menüleiste zu rücken
+            child: Container(
+              color: Colors.grey[0],
+            ),
+          ),
           CreateMenuButton(
             menuButtonIcon: Icons.login_rounded,
             menuButtonText: 'Login',
           ),
+          MenuSpaceHelper()
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/menu_space_helper.dart';
 
 import 'menu_drawer.dart';
 
@@ -97,10 +98,16 @@ class _HomePageState extends State<HomePage> {
                                         Icons.bookmark_border_rounded,
                                     menuButtonText: 'Bookmarked',
                                   ),
+                                  Expanded(
+                                    child: Container(
+                                      color: Colors.grey[0],
+                                    ),
+                                  ),
                                   CreateMenuButton(
                                     menuButtonIcon: Icons.login_rounded,
                                     menuButtonText: 'Login',
                                   ),
+                                  MenuSpaceHelper(),
                                 ],
                               ),
                               margin: EdgeInsets.all(4),
@@ -144,6 +151,20 @@ class _HomePageState extends State<HomePage> {
         ),
         margin: EdgeInsets.all(4),
       ),
+    );
+  }
+}
+
+class MenuSpaceHelper extends StatelessWidget {
+  const MenuSpaceHelper({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 4,
+      color: Colors.grey[0],
     );
   }
 }
