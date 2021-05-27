@@ -154,17 +154,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-class MenuSpaceHelper extends StatelessWidget {
-  const MenuSpaceHelper({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 4,
-      color: Colors.grey[0],
-    );
-  }
-}
