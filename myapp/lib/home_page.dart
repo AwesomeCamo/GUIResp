@@ -24,7 +24,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 body: Column(
                   children: [
-                    buildContentBox(Colors.grey[800]),
+                    Expanded(
+                      child: buildTopBanner(),
+                    ),
                     buildContentBox(Colors.grey[300]),
                     buildContentBox(Colors.grey[400]),
                     buildContentBox(Colors.grey[500]),
@@ -42,11 +44,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Expanded(
                       flex: 1,
-                      child: Row(
-                        children: [
-                          buildContentBox(Colors.grey[800]),
-                        ],
-                      ),
+                      child: buildTopBanner(),
                     ),
                     Expanded(
                       flex: 3,
@@ -68,11 +66,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Expanded(
                       flex: 1,
-                      child: Row(
-                        children: [
-                          buildContentBox(Colors.grey[800]),
-                        ],
-                      ),
+                      child: buildTopBanner(),
                     ),
                     Expanded(
                       flex: 3,
@@ -137,6 +131,23 @@ class _HomePageState extends State<HomePage> {
             }
             // Ende des Bildschirmbreiten if-Statements
           },
+        ),
+      ),
+    );
+  }
+
+  Padding buildTopBanner() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(4, 4, 4, 0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('FoodBanner.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
       ),
     );
