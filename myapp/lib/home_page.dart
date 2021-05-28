@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                       child: buildTopBanner(),
                     ),
                     Expanded(
-                      flex: 3,
+                      flex: 5,
                       child: Row(
                         children: [
                           buildContentBox(Colors.grey[300]),
@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                       child: buildTopBanner(),
                     ),
                     Expanded(
-                      flex: 3,
+                      flex: 5,
                       child: Row(
                         children: [
                           Expanded(
@@ -136,20 +136,33 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Padding buildTopBanner() {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(4, 4, 4, 0),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('FoodBanner.jpg'),
-              fit: BoxFit.cover,
+  Column buildTopBanner() {
+    return Column(
+      children: [
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
             ),
           ),
         ),
-      ),
+        SizedBox(
+          width: double.infinity,
+          height: 10,
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.grey[300],
+                  Colors.white,
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
