@@ -32,8 +32,14 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         // TODO: In Listview umwandeln
                         children: [
-                          buildContentBox(Colors.grey[400]),
-                          buildContentBox(Colors.grey[400]),
+                          Expanded(
+                            flex: 7,
+                            child: buildColoredBox(Colors.grey[400]),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: buildColoredBox(Colors.grey[400]),
+                          ),
                         ],
                       ),
                     ),
@@ -57,8 +63,14 @@ class _HomePageState extends State<HomePage> {
                       flex: 5,
                       child: Row(
                         children: [
-                          buildContentBox(Colors.grey[400]),
-                          buildContentBox(Colors.grey[400]),
+                          Expanded(
+                            flex: 7,
+                            child: buildColoredBox(Colors.grey[400]),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: buildColoredBox(Colors.grey[400]),
+                          ),
                         ],
                       ),
                     ),
@@ -122,8 +134,14 @@ class _HomePageState extends State<HomePage> {
                             flex: 7,
                             child: Row(
                               children: [
-                                buildContentBox(Colors.grey[400]),
-                                buildContentBox(Colors.grey[400]),
+                                Expanded(
+                                  flex: 7,
+                                  child: buildColoredBox(Colors.grey[400]),
+                                ),
+                                Expanded(
+                                  flex: 2,
+                                  child: buildColoredBox(Colors.grey[400]),
+                                ),
                               ],
                             ),
                           ),
@@ -173,15 +191,13 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Expanded buildContentBox(Color color) {
-    return Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(6),
-        ),
-        margin: EdgeInsets.all(4),
+  Container buildColoredBox(Color color) {
+    return Container(
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(6),
       ),
+      margin: EdgeInsets.all(4),
     );
   }
 }
