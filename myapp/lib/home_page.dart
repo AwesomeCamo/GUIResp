@@ -45,6 +45,13 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
+                floatingActionButton: FloatingActionButton(
+                  onPressed: () {
+                    print('Button Pressed');
+                  },
+                  child: const Icon(Icons.shopping_cart),
+                  backgroundColor: Colors.grey[600],
+                ),
               );
             } else if (constraints.maxWidth < 1440) {
               // Anzeige für Tablets und Mobile Phones im Landscape Modus
