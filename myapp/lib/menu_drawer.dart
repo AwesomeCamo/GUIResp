@@ -10,7 +10,7 @@ class MenuDrawer extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.orange[300],
+              color: Colors.cyan[200],
             ),
             child: Container(
               child: Text('Menü'),

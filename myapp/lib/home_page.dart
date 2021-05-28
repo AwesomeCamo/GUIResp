@@ -27,9 +27,16 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: buildTopBanner(),
                     ),
-                    buildContentBox(Colors.grey[300]),
-                    buildContentBox(Colors.grey[400]),
-                    buildContentBox(Colors.grey[500]),
+                    Expanded(
+                      flex: 7,
+                      child: Column(
+                        // TODO: In Listview umwandeln
+                        children: [
+                          buildContentBox(Colors.grey[400]),
+                          buildContentBox(Colors.grey[400]),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               );
@@ -50,9 +57,8 @@ class _HomePageState extends State<HomePage> {
                       flex: 5,
                       child: Row(
                         children: [
-                          buildContentBox(Colors.grey[300]),
                           buildContentBox(Colors.grey[400]),
-                          buildContentBox(Colors.grey[500]),
+                          buildContentBox(Colors.grey[400]),
                         ],
                       ),
                     ),
@@ -106,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                               margin: EdgeInsets.all(4),
                               decoration: BoxDecoration(
-                                color: Colors.orange[300],
+                                color: Colors.cyan[200],
                                 borderRadius: BorderRadius.circular(6),
                               ),
                             ),
@@ -116,9 +122,8 @@ class _HomePageState extends State<HomePage> {
                             flex: 7,
                             child: Row(
                               children: [
-                                buildContentBox(Colors.grey[500]),
                                 buildContentBox(Colors.grey[400]),
-                                buildContentBox(Colors.grey[300]),
+                                buildContentBox(Colors.grey[400]),
                               ],
                             ),
                           ),
@@ -142,7 +147,9 @@ class _HomePageState extends State<HomePage> {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.white,
+              image: DecorationImage(
+                image: AssetImage('Banner.png'),
+              ),
             ),
           ),
         ),
