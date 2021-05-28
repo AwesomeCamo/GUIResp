@@ -20,8 +20,8 @@ class _HomePageState extends State<HomePage> {
               return Scaffold(
                 drawer: MenuDrawer(),
                 appBar: AppBar(
-                  title: Text('Meine Mobilansicht'),
-                ),
+                    /* title: Text('Meine Mobilansicht'), */
+                    ),
                 body: Column(
                   children: [
                     Expanded(
@@ -58,8 +58,8 @@ class _HomePageState extends State<HomePage> {
               return Scaffold(
                 drawer: MenuDrawer(),
                 appBar: AppBar(
-                  title: Text('Meine Tabletansicht'),
-                ),
+                    /* title: Text('Meine Tabletansicht'), */
+                    ),
                 body: Column(
                   children: [
                     Expanded(
