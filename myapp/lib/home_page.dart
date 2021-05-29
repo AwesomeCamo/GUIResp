@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/menu_space_helper.dart';
 
-import 'menu_drawer.dart';
+import 'widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -25,7 +24,14 @@ class _HomePageState extends State<HomePage> {
                 body: Column(
                   children: [
                     Expanded(
-                      child: buildTopBanner(),
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: LogoBannerTop(),
+                          ),
+                          BannerShadow(),
+                        ],
+                      ),
                     ),
                     Expanded(
                       flex: 7,
@@ -64,7 +70,14 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Expanded(
                       flex: 1,
-                      child: buildTopBanner(),
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: LogoBannerTop(),
+                          ),
+                          BannerShadow(),
+                        ],
+                      ),
                     ),
                     Expanded(
                       flex: 5,
@@ -91,7 +104,43 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Expanded(
                       flex: 1,
-                      child: buildTopBanner(),
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  height: double.infinity,
+                                  width: 156,
+                                ),
+                                Expanded(
+                                  child: LogoBannerTop(),
+                                ),
+                                CircularIconButton(
+                                  icon: Icons.search,
+                                  iconSize: 40,
+                                  onPressed: () => print('Suchen'),
+                                  tooltip: 'Suchen',
+                                ),
+                                CircularIconButton(
+                                  icon: Icons.shopping_cart,
+                                  iconSize: 40,
+                                  onPressed: () =>
+                                      print('Einkaufswagen angeklickt'),
+                                  tooltip: 'Einkaufswagen',
+                                ),
+                                CircularIconButton(
+                                  icon: Icons.account_circle,
+                                  iconSize: 40,
+                                  onPressed: () => print('Profil angeklickt'),
+                                  tooltip: 'Mein Profil',
+                                ),
+                              ],
+                            ),
+                          ),
+                          BannerShadow(),
+                        ],
+                      ),
                     ),
                     Expanded(
                       flex: 5,
@@ -163,38 +212,6 @@ class _HomePageState extends State<HomePage> {
           },
         ),
       ),
-    );
-  }
-
-  Column buildTopBanner() {
-    return Column(
-      children: [
-        Expanded(
-          child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('Banner.png'),
-              ),
-            ),
-          ),
-        ),
-        SizedBox(
-          width: double.infinity,
-          height: 10,
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.grey[300],
-                  Colors.white,
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 

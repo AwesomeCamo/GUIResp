@@ -1,0 +1,27 @@
+import 'package:flutter/material.dart';
+
+class BannerShadow extends StatelessWidget {
+  const BannerShadow({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 10,
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.grey[300],
+              Colors.white,
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
