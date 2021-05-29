@@ -19,8 +19,16 @@ class _HomePageState extends State<HomePage> {
               return Scaffold(
                 drawer: MenuDrawer(),
                 appBar: AppBar(
-                    /* title: Text('Meine Mobilansicht'), */
+                  actions: [
+                    CircularIconButton(
+                      backgroundColor: Colors.white,
+                      icon: Icons.search,
+                      iconSize: 20,
+                      onPressed: () => print('Suchen'),
+                      tooltip: 'Suchen',
                     ),
+                  ],
+                ),
                 body: Column(
                   children: [
                     Expanded(
@@ -73,7 +81,32 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         children: [
                           Expanded(
-                            child: LogoBannerTop(),
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  height: double.infinity,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.07,
+                                ),
+                                Expanded(
+                                  child: LogoBannerTop(),
+                                ),
+                                CircularIconButton(
+                                  icon: Icons.search,
+                                  iconSize: 40,
+                                  onPressed: () => print('Suchen'),
+                                  tooltip: 'Suchen',
+                                  backgroundColor: Colors.grey,
+                                ),
+                                CircularIconButton(
+                                  icon: Icons.person,
+                                  iconSize: 40,
+                                  onPressed: () => print('Profil angeklickt'),
+                                  tooltip: 'Mein Profil',
+                                  backgroundColor: Colors.grey,
+                                ),
+                              ],
+                            ),
                           ),
                           BannerShadow(),
                         ],
@@ -95,6 +128,13 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ],
+                ),
+                floatingActionButton: FloatingActionButton(
+                  onPressed: () {
+                    print('Button Pressed');
+                  },
+                  child: const Icon(Icons.shopping_cart),
+                  backgroundColor: Colors.grey[600],
                 ),
               );
             } else {
@@ -121,6 +161,7 @@ class _HomePageState extends State<HomePage> {
                                   iconSize: 40,
                                   onPressed: () => print('Suchen'),
                                   tooltip: 'Suchen',
+                                  backgroundColor: Colors.grey,
                                 ),
                                 CircularIconButton(
                                   icon: Icons.shopping_cart,
@@ -128,12 +169,14 @@ class _HomePageState extends State<HomePage> {
                                   onPressed: () =>
                                       print('Einkaufswagen angeklickt'),
                                   tooltip: 'Einkaufswagen',
+                                  backgroundColor: Colors.grey,
                                 ),
                                 CircularIconButton(
-                                  icon: Icons.account_circle,
+                                  icon: Icons.person,
                                   iconSize: 40,
                                   onPressed: () => print('Profil angeklickt'),
                                   tooltip: 'Mein Profil',
+                                  backgroundColor: Colors.grey,
                                 ),
                               ],
                             ),
