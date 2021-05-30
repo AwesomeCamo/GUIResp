@@ -242,7 +242,7 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Expanded(
                                   flex: 7,
-                                  child: buildColoredBox(Colors.grey[400]),
+                                  child: TileContainer(),
                                 ),
                                 Expanded(
                                   flex: 2,
