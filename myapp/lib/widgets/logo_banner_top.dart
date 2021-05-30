@@ -10,7 +10,7 @@ class LogoBannerTop extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('Banner.png'),
+          image: AssetImage('./assets/banner.png'),
         ),
       ),
     );

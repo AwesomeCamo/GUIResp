@@ -17,8 +17,11 @@ class _HomePageState extends State<HomePage> {
             if (constraints.maxWidth < 480) {
               // Anzeige für Mobilgeräte
               return Scaffold(
+                extendBodyBehindAppBar: true,
                 drawer: MenuDrawer(),
                 appBar: AppBar(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
                   actions: [
                     CircularIconButton(
                       backgroundColor: Colors.white,
@@ -42,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Expanded(
-                      flex: 7,
+                      flex: 6,
                       child: Column(
                         // TODO: In Listview umwandeln
                         children: [
@@ -69,11 +72,15 @@ class _HomePageState extends State<HomePage> {
               );
             } else if (constraints.maxWidth < 1440) {
               // Anzeige für Tablets und Mobile Phones im Landscape Modus
+              // TODO: Overflows im Drawer beseitigen
               return Scaffold(
+                extendBodyBehindAppBar: true,
                 drawer: MenuDrawer(),
                 appBar: AppBar(
-                    /* title: Text('Meine Tabletansicht'), */
-                    ),
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  /* title: Text('Meine Tabletansicht'), */
+                ),
                 body: Column(
                   children: [
                     Expanded(
@@ -113,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Expanded(
-                      flex: 5,
+                      flex: 4,
                       child: Row(
                         children: [
                           Expanded(
