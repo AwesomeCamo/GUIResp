@@ -7,7 +7,7 @@ class MenuDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
-        children: <Widget>[
+        children: [
           DrawerHeader(
             decoration: BoxDecoration(
               color: Colors.cyan[200],
