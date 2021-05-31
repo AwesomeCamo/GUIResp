@@ -5,41 +5,57 @@ import 'widgets.dart';
 class MenuDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Drawer(
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+      ),
+      width: MediaQuery.of(context).size.width * 0.75,
       child: Column(
         children: [
-          DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.cyan[200],
-            ),
+          Expanded(
+            flex: 1,
             child: Container(
-              child: Text('Menü'),
-              width: double.infinity,
+              child: DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.cyan[200],
+                ),
+                child: Container(
+                  child: Text('Menü'),
+                  width: double.infinity,
+                ),
+              ),
             ),
-          ),
-          CreateMenuButton(
-            menuButtonIcon: Icons.account_circle_rounded,
-            menuButtonText: 'Profil',
-          ),
-          CreateMenuButton(
-            menuButtonIcon: Icons.trending_up_rounded,
-            menuButtonText: 'Beliebt',
-          ),
-          CreateMenuButton(
-            menuButtonIcon: Icons.bookmark_border_rounded,
-            menuButtonText: 'Bookmarked',
           ),
           Expanded(
-            // Spacer um LoginButton an den Boden der Menüleiste zu rücken
-            child: Container(
-              color: Colors.grey[0],
+            flex: 3,
+            child: Column(
+              children: [
+                CreateMenuButton(
+                  menuButtonIcon: Icons.account_circle_rounded,
+                  menuButtonText: 'Profil',
+                ),
+                CreateMenuButton(
+                  menuButtonIcon: Icons.trending_up_rounded,
+                  menuButtonText: 'Beliebt',
+                ),
+                CreateMenuButton(
+                  menuButtonIcon: Icons.bookmark_border_rounded,
+                  menuButtonText: 'Bookmarked',
+                ),
+                Expanded(
+                  // Spacer um LoginButton an den Boden der Menüleiste zu rücken
+                  child: Container(
+                    color: Colors.grey[0],
+                  ),
+                ),
+                CreateMenuButton(
+                  menuButtonIcon: Icons.login_rounded,
+                  menuButtonText: 'Login',
+                ),
+                MenuSpaceHelper(),
+              ],
             ),
-          ),
-          CreateMenuButton(
-            menuButtonIcon: Icons.login_rounded,
-            menuButtonText: 'Login',
-          ),
-          MenuSpaceHelper()
+          )
         ],
       ),
     );
@@ -73,7 +89,8 @@ class CreateMenuButton extends StatelessWidget {
             ),
             Container(
               child: Text(menuButtonText),
-              padding: EdgeInsets.all(20),
+              padding:
+                  EdgeInsets.all(MediaQuery.of(context).size.height * 0.02),
             ),
           ],
         ),
