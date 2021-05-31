@@ -72,7 +72,6 @@ class _HomePageState extends State<HomePage> {
               );
             } else if (constraints.maxWidth < 1440) {
               // Anzeige für Tablets und Mobile Phones im Landscape Modus
-              // TODO: Overflows im Drawer beseitigen
               return Scaffold(
                 extendBodyBehindAppBar: true,
                 drawer: MenuDrawer(),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TileContainer extends StatelessWidget {
-  const TileContainer({
+class TabletTileContainer extends StatelessWidget {
+  const TabletTileContainer({
     Key key,
   }) : super(key: key);
 
@@ -12,6 +12,15 @@ class TileContainer extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black),
         borderRadius: BorderRadius.circular(6),
+      ),
+      child: Column(
+        children: [
+          Row(),
+          Row(),
+          Row(),
+          Row(),
+          Row(),
+        ],
       ),
     );
   }
