@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'widgets.dart';
 
+/* Gesamte oberer Teil der Desktopfassung, mit Logo, 
+Buttons und Schatten zur Abhebung */
+
 class DesktopTopBanner extends StatelessWidget {
   const DesktopTopBanner({
     Key key,
@@ -19,7 +22,7 @@ class DesktopTopBanner extends StatelessWidget {
                 SizedBox(
                   height: double.infinity,
                   width: 156,
-                ),
+                ), // Stellt das Logo immer in die Mitte, width kommt von Breite der Buttons
                 Expanded(
                   child: LogoBannerTop(),
                 ),

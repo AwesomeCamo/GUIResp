@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:myapp/data/data.dart';
 import 'widgets.dart';
 
+/* Widget, das die angebotenen Produkte in einer Gridview anzeigt
+benötigt Angabe der gewünschten Anzahl der nebeneinander angezeigten Tiles */
+
 class TileContainer extends StatelessWidget {
   final int anzahlTilesNebeneinander;
 
@@ -14,25 +17,16 @@ class TileContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.count(
       primary: false,
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
       crossAxisCount: anzahlTilesNebeneinander,
       children: [
         for (var i = 0; i < availableOffers.length; i++) OfferTile(offerID: i),
       ],
-      /* OfferTile(offerID: 0),
-        OfferTile(offerID: 1),
-        OfferTile(offerID: 2),
-        OfferTile(offerID: 3),
-        OfferTile(offerID: 4),
-        OfferTile(offerID: 5),
-        OfferTile(offerID: 6),
-        OfferTile(offerID: 7),
-        OfferTile(offerID: 8),
-        OfferTile(offerID: 9),
-        OfferTile(offerID: 10),
-        OfferTile(offerID: 11), */
+      /* For-Schleife iteriert durch die Liste aller Angebote und gibt sie
+      in einer scrollbaren Ansicht aus, deren Elementanzahl gleich der Anzahl 
+      der Objekte der Liste ist */
     );
   }
 }

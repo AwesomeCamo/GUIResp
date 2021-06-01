@@ -7,3 +7,4 @@ export 'tile_container.dart';
 export 'offer_tile.dart';
 export 'top_banner_tablet.dart';
 export 'top_banner_desktop.dart';
+export 'side_menu_button.dart';

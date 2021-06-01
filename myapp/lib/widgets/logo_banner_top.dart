@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/* Anzeige der Logobanners */
+
 class LogoBannerTop extends StatelessWidget {
   const LogoBannerTop({
     Key key,

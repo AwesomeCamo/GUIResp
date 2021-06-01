@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+/* Erstellt einen runden Button, dem ein Icon, die Größe des Icons, 
+eine Funktion die bei drücken des Buttons aufgerufen wird, sowie ein Tooltip
+beim Hovern und eine Hintergrundfarbe übergeben werden muss */
+
 class CircularIconButton extends StatelessWidget {
   final IconData icon;
   final double iconSize;

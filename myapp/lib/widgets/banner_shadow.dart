@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/* Erstellt einen Schatten unter dem oberen Teil der Page */
+
 class BannerShadow extends StatelessWidget {
   const BannerShadow({
     Key key,

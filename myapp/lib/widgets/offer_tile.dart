@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import '../data/data.dart';
 
+/* Klasse zum Erstellen eines Card-Widgets, das ein Produktvorschaubild,
+den Preis und den Namen zeigen.
+Benötigt die ID des anzuzeigenden Produkts */
+
 class OfferTile extends StatelessWidget {
   final int offerID;
 
@@ -13,7 +17,7 @@ class OfferTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        margin: EdgeInsets.all(4),
+        margin: EdgeInsets.all(6),
         decoration: BoxDecoration(
           color: Colors.white70,
           image: DecorationImage(
@@ -24,7 +28,9 @@ class OfferTile extends StatelessWidget {
         child: Column(
           children: [
             Text(availableOffers[offerID].name),
-            Expanded(child: SizedBox()),
+            Expanded(
+              child: SizedBox(),
+            ), // Spacer um Preis ans untere Ende zu setzen
             Text(availableOffers[offerID].productPrice.toString() +
                 '€') // Preis aus dem Listeneintrag holen und €-Zeichen anhängen
           ],

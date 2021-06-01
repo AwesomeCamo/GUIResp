@@ -60,7 +60,6 @@ class _HomePageState extends State<HomePage> {
                 appBar: AppBar(
                   backgroundColor: Colors.transparent,
                   elevation: 0,
-                  /* title: Text('Meine Tabletansicht'), */
                 ),
                 body: Column(
                   children: [
@@ -89,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: const Icon(Icons.shopping_cart),
                   backgroundColor: Colors.grey[600],
-                ),
+                ), // Button um auf Einkaufswagen zuzugreifen TODO: Einkaufswagenfunktionalität hinzufügen
               );
             } else {
               // Anzeige in Webansicht auf dem Desktop
@@ -171,6 +170,8 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+/* farbige Box zur Vereinfachung der Anordnung von Elementen */
 
   Container buildColoredBox(Color color) {
     return Container(
