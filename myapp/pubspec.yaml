@@ -40,6 +40,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/
+    - assets/tshirts/
   uses-material-design: true
 
   # An image asset can refer to one or more resolution-specific "variants", see

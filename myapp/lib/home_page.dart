@@ -63,8 +63,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 body: Column(
                   children: [
-                    Expanded(
-                      flex: 1,
+                    Container(
+                      height: 120,
                       child: Column(
                         children: [
                           Expanded(
@@ -75,7 +75,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Expanded(
-                      flex: 6,
                       child: TileContainer(
                         anzahlTilesNebeneinander: 3,
                       ),
