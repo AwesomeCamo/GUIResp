@@ -22,6 +22,14 @@ class OfferTile extends StatelessWidget {
           fit: BoxFit.fitWidth,
         ),
       ),
+      child: Column(
+        children: [
+          Text(availableOffers[offerID].name),
+          Expanded(child: SizedBox()),
+          Text(availableOffers[offerID].productPrice.toString() +
+              '€') // Preis aus dem Listeneintrag holen und €-Zeichen anhängen
+        ],
+      ),
     );
   }
 }

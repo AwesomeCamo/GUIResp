@@ -8,35 +8,35 @@ final List<Offer> availableOffers = [
   Offer(
       name: 'Braunes T-Shirt',
       offerImage: 'tshirts/brown.png',
-      productPrice: 25.99),
+      productPrice: 22.99),
   Offer(
       name: 'T-Shirt Cyan',
       offerImage: 'tshirts/cyan.png',
-      productPrice: 25.99),
+      productPrice: 21.99),
   Offer(
       name: 'Blaues T-Shirt',
       offerImage: 'tshirts/darkblue.png',
-      productPrice: 25.99),
+      productPrice: 24.99),
   Offer(
       name: 'Dunkelgrünes T-Shirt',
       offerImage: 'tshirts/darkgreen.png',
-      productPrice: 25.99),
+      productPrice: 27.99),
   Offer(
       name: 'Grünes T-Shirt',
       offerImage: 'tshirts/green.png',
-      productPrice: 25.99),
+      productPrice: 20.99),
   Offer(
       name: 'Oranges T-Shirt',
       offerImage: 'tshirts/orange.png',
-      productPrice: 25.99),
+      productPrice: 21.99),
   Offer(
       name: 'Pinkes T-Shirt',
       offerImage: 'tshirts/pink.png',
-      productPrice: 25.99),
+      productPrice: 16.99),
   Offer(
       name: 'Rotes T-Shirt',
       offerImage: 'tshirts/red.png',
-      productPrice: 25.99),
+      productPrice: 19.99),
   Offer(
       name: 'Türkises T-Shirt',
       offerImage: 'tshirts/turquoise.png',
@@ -44,9 +44,9 @@ final List<Offer> availableOffers = [
   Offer(
       name: 'Violettes T-Shirt',
       offerImage: 'tshirts/violet.png',
-      productPrice: 25.99),
+      productPrice: 21.99),
   Offer(
       name: 'Gelbes T-Shirt',
       offerImage: 'tshirts/yellow.png',
-      productPrice: 25.99),
+      productPrice: 22.99),
 ];
