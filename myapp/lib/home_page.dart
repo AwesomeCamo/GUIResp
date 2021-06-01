@@ -34,30 +34,12 @@ class _HomePageState extends State<HomePage> {
                 ),
                 body: Column(
                   children: [
-                    Expanded(
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: LogoBannerTop(),
-                          ),
-                          BannerShadow(),
-                        ],
-                      ),
-                    ),
+                    Expanded(child: LogoBannerTop()),
+                    BannerShadow(),
                     Expanded(
                       flex: 6,
-                      child: Column(
-                        // TODO: In Listview umwandeln
-                        children: [
-                          Expanded(
-                            flex: 7,
-                            child: buildColoredBox(Colors.grey[400]),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: buildColoredBox(Colors.grey[400]),
-                          ),
-                        ],
+                      child: TileContainer(
+                        anzahlTilesNebeneinander: 2,
                       ),
                     ),
                   ],
@@ -87,50 +69,16 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         children: [
                           Expanded(
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  height: double.infinity,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.07,
-                                ),
-                                Expanded(
-                                  child: LogoBannerTop(),
-                                ),
-                                CircularIconButton(
-                                  icon: Icons.search,
-                                  iconSize: 40,
-                                  onPressed: () => print('Suchen'),
-                                  tooltip: 'Suchen',
-                                  backgroundColor: Colors.grey,
-                                ),
-                                CircularIconButton(
-                                  icon: Icons.person,
-                                  iconSize: 40,
-                                  onPressed: () => print('Profil angeklickt'),
-                                  tooltip: 'Mein Profil',
-                                  backgroundColor: Colors.grey,
-                                ),
-                              ],
-                            ),
+                            child: TabletTopBanner(),
                           ),
                           BannerShadow(),
                         ],
                       ),
                     ),
                     Expanded(
-                      flex: 4,
-                      child: Row(
-                        children: [
-                          Expanded(
-                            flex: 7,
-                            child: buildColoredBox(Colors.grey[400]),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: buildColoredBox(Colors.grey[400]),
-                          ),
-                        ],
+                      flex: 6,
+                      child: TileContainer(
+                        anzahlTilesNebeneinander: 3,
                       ),
                     ),
                   ],
@@ -148,49 +96,7 @@ class _HomePageState extends State<HomePage> {
               return Container(
                 child: Column(
                   children: [
-                    Expanded(
-                      flex: 1,
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  height: double.infinity,
-                                  width: 156,
-                                ),
-                                Expanded(
-                                  child: LogoBannerTop(),
-                                ),
-                                CircularIconButton(
-                                  icon: Icons.search,
-                                  iconSize: 40,
-                                  onPressed: () => print('Suchen'),
-                                  tooltip: 'Suchen',
-                                  backgroundColor: Colors.grey,
-                                ),
-                                CircularIconButton(
-                                  icon: Icons.shopping_cart,
-                                  iconSize: 40,
-                                  onPressed: () =>
-                                      print('Einkaufswagen angeklickt'),
-                                  tooltip: 'Einkaufswagen',
-                                  backgroundColor: Colors.grey,
-                                ),
-                                CircularIconButton(
-                                  icon: Icons.person,
-                                  iconSize: 40,
-                                  onPressed: () => print('Profil angeklickt'),
-                                  tooltip: 'Mein Profil',
-                                  backgroundColor: Colors.grey,
-                                ),
-                              ],
-                            ),
-                          ),
-                          BannerShadow(),
-                        ],
-                      ),
-                    ),
+                    DesktopTopBanner(),
                     Expanded(
                       flex: 5,
                       child: Row(
@@ -241,7 +147,9 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Expanded(
                                   flex: 7,
-                                  child: TileContainer(),
+                                  child: TileContainer(
+                                    anzahlTilesNebeneinander: 4,
+                                  ),
                                 ),
                                 Expanded(
                                   flex: 2,
