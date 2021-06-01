@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/data/data.dart';
 import 'widgets.dart';
 
 class TileContainer extends StatelessWidget {
@@ -17,8 +18,10 @@ class TileContainer extends StatelessWidget {
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
       crossAxisCount: anzahlTilesNebeneinander,
-      children: <Widget>[
-        OfferTile(offerID: 0),
+      children: [
+        for (var i = 0; i < availableOffers.length; i++) OfferTile(offerID: i),
+      ],
+      /* OfferTile(offerID: 0),
         OfferTile(offerID: 1),
         OfferTile(offerID: 2),
         OfferTile(offerID: 3),
@@ -29,8 +32,7 @@ class TileContainer extends StatelessWidget {
         OfferTile(offerID: 8),
         OfferTile(offerID: 9),
         OfferTile(offerID: 10),
-        OfferTile(offerID: 11),
-      ],
+        OfferTile(offerID: 11), */
     );
   }
 }

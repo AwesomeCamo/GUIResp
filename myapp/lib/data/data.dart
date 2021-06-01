@@ -49,4 +49,8 @@ final List<Offer> availableOffers = [
       name: 'Gelbes T-Shirt',
       offerImage: 'tshirts/yellow.png',
       productPrice: 22.99),
+  Offer(
+      name: 'Schwarzes T-Shirt',
+      offerImage: 'tshirts/black.png',
+      productPrice: 25.99),
 ];
