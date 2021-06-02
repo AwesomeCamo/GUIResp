@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
                 drawer: MenuDrawer(),
                 appBar: AppBar(
                   backgroundColor: Colors.transparent,
+                  iconTheme: IconThemeData(color: Colors.black),
                   elevation: 0,
                   actions: [
                     CircularIconButton(
@@ -59,6 +60,7 @@ class _HomePageState extends State<HomePage> {
                 drawer: MenuDrawer(),
                 appBar: AppBar(
                   backgroundColor: Colors.transparent,
+                  iconTheme: IconThemeData(color: Colors.black),
                   elevation: 0,
                 ),
                 body: Column(
