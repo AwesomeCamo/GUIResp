@@ -21,7 +21,27 @@ class DesktopTopBanner extends StatelessWidget {
               children: [
                 SizedBox(
                   height: double.infinity,
-                  width: 156,
+                  width: 20,
+                ),
+                Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.lightbulb_outline,
+                        size: 40,
+                      ),
+                      ChangeThemeSwitch(),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: double.infinity,
+                  width: 104,
                 ), // Stellt das Logo immer in die Mitte, width kommt von Breite der Buttons
                 Expanded(
                   child: LogoBannerTop(),

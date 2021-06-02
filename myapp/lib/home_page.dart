@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
                   elevation: 0,
                   actions: [
                     CircularIconButton(
-                      backgroundColor: Colors.white,
+                      backgroundColor: Theme.of(context).cardColor,
                       icon: Icons.search,
                       iconSize: 20,
                       onPressed: () => print('Suchen'),

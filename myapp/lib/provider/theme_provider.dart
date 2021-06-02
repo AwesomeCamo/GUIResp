@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
 
+class ThemeProvider extends ChangeNotifier {
+  ThemeMode themeMode = ThemeMode.dark;
+
+  bool get isDarkMode => themeMode == ThemeMode.dark;
+
+  void toggleTheme(bool isActive) {
+    themeMode = isActive ? ThemeMode.dark : ThemeMode.light;
+    notifyListeners();
+  }
+}
+
 class MyThemes {
   static final darkMode = ThemeData(
     scaffoldBackgroundColor: Colors.grey[850],
     primaryColor: Colors.black45,
     primaryColorLight: Colors.cyan[900],
     primaryColorDark: Colors.grey[700],
-    cardColor: Colors.grey[700],
+    cardColor: Colors.grey[900],
   );
 
   static final lightMode = ThemeData(
