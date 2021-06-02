@@ -18,13 +18,41 @@ class MenuDrawer extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
+              width: double.infinity,
               child: DrawerHeader(
                 decoration: BoxDecoration(
                   color: Colors.cyan[200],
                 ),
-                child: Container(
-                  child: Text('Menü'),
-                  width: double.infinity,
+                child: Column(
+                  children: [
+                    Container(
+                      child: Text('Menü'),
+                      width: double.infinity,
+                    ),
+                    Expanded(child: SizedBox()),
+                    Row(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 120,
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.lightbulb_outline,
+                                size: 40,
+                              ),
+                              ChangeThemeSwitch(),
+                            ],
+                          ),
+                        ),
+                        Expanded(child: SizedBox()),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),

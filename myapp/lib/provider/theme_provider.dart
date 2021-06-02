@@ -17,7 +17,7 @@ class MyThemes {
     primaryColor: Colors.black45,
     primaryColorLight: Colors.cyan[900],
     primaryColorDark: Colors.grey[700],
-    cardColor: Colors.grey[900],
+    cardColor: Colors.grey[800],
   );
 
   static final lightMode = ThemeData(
