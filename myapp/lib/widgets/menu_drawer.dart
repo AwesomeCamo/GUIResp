@@ -10,7 +10,7 @@ class MenuDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).scaffoldBackgroundColor,
       ),
       width: MediaQuery.of(context).size.width * 0.75,
       child: Column(

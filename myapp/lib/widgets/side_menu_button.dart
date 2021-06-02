@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CreateMenuButton extends StatelessWidget {
-  final IconData menuButtonIcon;
-  final String menuButtonText;
-
 /* Klasse zum erstellen von Menübuttons, welche später im Drawermenü,
  oder im Menü an der Seite angezeigt werden. 
  Gewünschter Text und Icon müssen übergeben werden */
+
+class CreateMenuButton extends StatelessWidget {
+  final IconData menuButtonIcon;
+  final String menuButtonText;
 
   const CreateMenuButton({
     Key key,
@@ -19,8 +19,10 @@ class CreateMenuButton extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(4, 4, 4, 0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Colors.white, // Hintergrundfarbe der Menübuttons
-          onPrimary: Colors.black, // Schrift- und Iconfarbe
+          primary: Theme.of(context)
+              .primaryColor, // Hintergrundfarbe der Menübuttons
+          onPrimary:
+              Theme.of(context).primaryColorDark, // Schrift- und Iconfarbe
         ),
         onPressed: () => print('button pressed'),
         child: Row(

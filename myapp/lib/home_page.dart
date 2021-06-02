@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                               margin: EdgeInsets.all(4),
                               decoration: BoxDecoration(
-                                color: Colors.cyan[200],
+                                color: Theme.of(context).primaryColorLight,
                                 borderRadius: BorderRadius.circular(6),
                               ),
                             ),
@@ -151,10 +151,10 @@ class _HomePageState extends State<HomePage> {
                                     anzahlTilesNebeneinander: 4,
                                   ),
                                 ),
-                                Expanded(
+                                /* Expanded(
                                   flex: 2,
                                   child: buildColoredBox(Colors.grey[400]),
-                                ),
+                                ), */
                               ],
                             ),
                           ),

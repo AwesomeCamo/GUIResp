@@ -18,8 +18,8 @@ class BannerShadow extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Colors.grey[300],
-              Colors.white,
+              Theme.of(context).primaryColor,
+              Theme.of(context).scaffoldBackgroundColor,
             ],
           ),
         ),
