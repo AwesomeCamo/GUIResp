@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/cart_page.dart';
 
 import 'widgets.dart';
 
@@ -56,7 +57,8 @@ class DesktopTopBanner extends StatelessWidget {
                 CircularIconButton(
                   icon: Icons.shopping_cart,
                   iconSize: 40,
-                  onPressed: () => print('Einkaufswagen angeklickt'),
+                  onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CartPage())),
                   tooltip: 'Einkaufswagen',
                   backgroundColor: Colors.grey,
                 ),

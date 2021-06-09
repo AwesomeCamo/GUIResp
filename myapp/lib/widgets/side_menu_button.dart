@@ -7,12 +7,14 @@ import 'package:flutter/material.dart';
 class CreateMenuButton extends StatelessWidget {
   final IconData menuButtonIcon;
   final String menuButtonText;
+  final Function onPressed;
 
-  const CreateMenuButton({
-    Key key,
-    @required this.menuButtonIcon,
-    @required this.menuButtonText,
-  }) : super(key: key);
+  const CreateMenuButton(
+      {Key key,
+      @required this.menuButtonIcon,
+      @required this.menuButtonText,
+      @required this.onPressed})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,7 +26,7 @@ class CreateMenuButton extends StatelessWidget {
           onPrimary:
               Theme.of(context).primaryColorDark, // Schrift- und Iconfarbe
         ),
-        onPressed: () => print('button pressed'),
+        onPressed: onPressed,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

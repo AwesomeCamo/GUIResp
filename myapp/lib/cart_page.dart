@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'cart_page.dart';
 import 'widgets/widgets.dart';
 
-class HomePage extends StatefulWidget {
+class CartPage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _CartPageState createState() => _CartPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,18 +39,15 @@ class _HomePageState extends State<HomePage> {
                     BannerShadow(),
                     Expanded(
                       flex: 6,
-                      child: TileContainer(
-                        anzahlTilesNebeneinander: 2,
-                      ),
+                      child: Text('Einkaufswagen'),
                     ),
                   ],
                 ),
                 floatingActionButton: FloatingActionButton(
-                  onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CartPage())),
-                  child: const Icon(Icons.shopping_cart),
+                  onPressed: () => Navigator.pop(context),
+                  child: const Icon(Icons.home),
                   backgroundColor: Colors.grey[600],
-                ),
+                ), // Button um zurück auf Home Seite zu kommen
               );
             } else if (constraints.maxWidth < 1440) {
               // Anzeige für Tablets und Mobile Phones im Landscape Modus
@@ -77,19 +73,18 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Expanded(
-                      child: TileContainer(
-                        anzahlTilesNebeneinander: 3,
-                      ),
+                      child: Text('Einkaufswagen'),
                     ),
                   ],
                 ),
                 floatingActionButton: FloatingActionButton(
-                  onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CartPage())),
-                  child: const Icon(Icons.shopping_cart),
+                  onPressed: () {
+                    print('Button Pressed');
+                  },
+                  child: const Icon(Icons.home),
                   backgroundColor: Colors.grey[600],
                   foregroundColor: Colors.black,
-                ), // Button um auf Einkaufswagen zuzugreifen TODO: Einkaufswagenfunktionalität hinzufügen
+                ), // Button um zurück auf Home Seite zu kommen
               );
             } else {
               // Anzeige in Webansicht auf dem Desktop
@@ -150,23 +145,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Expanded(
-                            // gesamter Inhaltsbereich
-                            flex: 7,
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  flex: 7,
-                                  child: TileContainer(
-                                    anzahlTilesNebeneinander: 4,
-                                  ),
-                                ),
-                                /* Expanded(
-                                  flex: 2,
-                                  child: buildColoredBox(Colors.grey[400]),
-                                ), */
-                              ],
-                            ),
-                          ),
+                              // gesamter Inhaltsbereich
+                              flex: 7,
+                              child: Text('Einkaufswagen')),
                         ],
                       ),
                     ),

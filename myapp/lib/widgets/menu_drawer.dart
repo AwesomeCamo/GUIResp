@@ -64,18 +64,22 @@ class MenuDrawer extends StatelessWidget {
                 CreateMenuButton(
                   menuButtonIcon: Icons.home,
                   menuButtonText: 'Home',
+                  onPressed: () => Navigator.pop(context),
                 ),
                 CreateMenuButton(
                   menuButtonIcon: Icons.account_circle_rounded,
                   menuButtonText: 'Profil',
+                  onPressed: () => print('button pressed'),
                 ),
                 CreateMenuButton(
                   menuButtonIcon: Icons.trending_up_rounded,
                   menuButtonText: 'Beliebt',
+                  onPressed: () => print('button pressed'),
                 ),
                 CreateMenuButton(
                   menuButtonIcon: Icons.bookmark_border_rounded,
                   menuButtonText: 'Bookmarked',
+                  onPressed: () => print('button pressed'),
                 ),
                 Expanded(
                   // Spacer um LoginButton an den Boden der Menüleiste zu rücken
@@ -86,6 +90,7 @@ class MenuDrawer extends StatelessWidget {
                 CreateMenuButton(
                   menuButtonIcon: Icons.login_rounded,
                   menuButtonText: 'Login',
+                  onPressed: () => print('button pressed'),
                 ),
                 MenuSpaceHelper(),
               ],
