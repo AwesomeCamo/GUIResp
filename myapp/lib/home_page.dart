@@ -109,6 +109,10 @@ class _HomePageState extends State<HomePage> {
                               child: Column(
                                 children: [
                                   CreateMenuButton(
+                                    menuButtonIcon: Icons.home,
+                                    menuButtonText: 'Home',
+                                  ),
+                                  CreateMenuButton(
                                     menuButtonIcon:
                                         Icons.account_circle_rounded,
                                     menuButtonText: 'Profil',
