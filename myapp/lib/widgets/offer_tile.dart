@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/data/cart_data.dart';
+import 'package:myapp/models/offer_model.dart';
+import 'package:myapp/widgets/widgets.dart';
 import '../data/data.dart';
 
 /* Klasse zum Erstellen eines Card-Widgets, das ein Produktvorschaubild,
@@ -31,10 +34,30 @@ class OfferTile extends StatelessWidget {
             Expanded(
               child: SizedBox(),
             ),
-            Text(availableOffers[offerID]
-                .name), // Spacer um Preis ans untere Ende zu setzen
-            Text(availableOffers[offerID].productPrice.toString() +
-                '€') // Preis aus dem Listeneintrag holen und €-Zeichen anhängen
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    Text(availableOffers[offerID].name),
+                    Text(availableOffers[offerID].productPrice.toString() +
+                        '€'), // Preis aus dem Listeneintrag holen und €-Zeichen anhängen
+                  ],
+                ),
+                CircularIconButton(
+                  backgroundColor: Theme.of(context).cardColor,
+                  icon: Icons.add_shopping_cart,
+                  iconSize: 20,
+                  onPressed: () => addedCartItems.add(
+                    Offer(
+                        name: availableOffers[offerID].name,
+                        offerImage: availableOffers[offerID].offerImage,
+                        productPrice: availableOffers[offerID].productPrice),
+                  ),
+                  tooltip: 'Zu Einkaufswagen hinzufügen',
+                ),
+              ],
+            ), // Spacer um Preis ans untere Ende zu setzen
           ],
         ),
       ),
