@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'home_page.dart';
 import 'widgets/widgets.dart';
 
 class CartPage extends StatefulWidget {
@@ -105,7 +106,10 @@ class _CartPageState extends State<CartPage> {
                                   CreateMenuButton(
                                     menuButtonIcon: Icons.home,
                                     menuButtonText: 'Home',
-                                    onPressed: () => Navigator.pop(context),
+                                    onPressed: () => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => HomePage())),
                                   ),
                                   CreateMenuButton(
                                     menuButtonIcon:

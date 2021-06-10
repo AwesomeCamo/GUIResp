@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../home_page.dart';
 import 'widgets.dart';
 
 /* Drawermenü welches in Mobil- und Tabletfassung durch Drücken des 
@@ -64,7 +65,8 @@ class MenuDrawer extends StatelessWidget {
                 CreateMenuButton(
                   menuButtonIcon: Icons.home,
                   menuButtonText: 'Home',
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePage())),
                 ),
                 CreateMenuButton(
                   menuButtonIcon: Icons.account_circle_rounded,

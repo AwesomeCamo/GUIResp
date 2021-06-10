@@ -110,7 +110,12 @@ class _HomePageState extends State<HomePage> {
                                   CreateMenuButton(
                                     menuButtonIcon: Icons.home,
                                     menuButtonText: 'Home',
-                                    onPressed: () => Navigator.pop(context),
+                                    onPressed: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => HomePage(),
+                                      ),
+                                    ),
                                   ),
                                   CreateMenuButton(
                                     menuButtonIcon:
@@ -160,10 +165,6 @@ class _HomePageState extends State<HomePage> {
                                     anzahlTilesNebeneinander: 4,
                                   ),
                                 ),
-                                /* Expanded(
-                                  flex: 2,
-                                  child: buildColoredBox(Colors.grey[400]),
-                                ), */
                               ],
                             ),
                           ),
