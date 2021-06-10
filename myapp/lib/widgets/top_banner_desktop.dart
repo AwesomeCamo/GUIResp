@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/cart_page.dart';
+import 'package:myapp/data/cart_data.dart';
 
 import 'widgets.dart';
 
@@ -54,13 +55,31 @@ class DesktopTopBanner extends StatelessWidget {
                   tooltip: 'Suchen',
                   backgroundColor: Colors.grey,
                 ),
-                CircularIconButton(
-                  icon: Icons.shopping_cart,
-                  iconSize: 40,
-                  onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CartPage())),
-                  tooltip: 'Einkaufswagen',
-                  backgroundColor: Colors.grey,
+                Stack(
+                  children: [
+                    CircularIconButton(
+                      icon: Icons.shopping_cart,
+                      iconSize: 40,
+                      onPressed: () => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => CartPage())),
+                      tooltip: 'Einkaufswagen',
+                      backgroundColor: Colors.grey,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(42, 42, 0, 0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle, color: Colors.red),
+                        child: Padding(
+                          padding: EdgeInsets.all(5),
+                          child: Text(
+                            addedCartItems.length.toString(),
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 CircularIconButton(
                   icon: Icons.person,

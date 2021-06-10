@@ -29,7 +29,9 @@ class _HomePageState extends State<HomePage> {
                       backgroundColor: Theme.of(context).cardColor,
                       icon: Icons.search,
                       iconSize: 20,
-                      onPressed: () => print('Suchen'),
+                      onPressed: () => setState(
+                        () => print('Suchen'),
+                      ),
                       tooltip: 'Suchen',
                     ),
                   ],

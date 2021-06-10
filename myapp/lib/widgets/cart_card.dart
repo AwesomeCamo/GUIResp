@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/data/cart_data.dart';
 
+import '../cart_page.dart';
+
 class CartCard extends StatelessWidget {
   final int cartID;
 
@@ -13,23 +15,52 @@ class CartCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        child: Row(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Container(
-                height: 200,
-                width: 200,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(addedCartItems[cartID].offerImage),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Container(
+                  height: 200,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(addedCartItems[cartID].offerImage),
+                    ),
                   ),
                 ),
               ),
-            ),
-            Text(addedCartItems[cartID].name),
-            Text(addedCartItems[cartID].productPrice.toString() + '€'),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  addedCartItems[cartID].name,
+                  style: TextStyle(
+                      color: Theme.of(context).highlightColor, fontSize: 24),
+                ),
+              ),
+              Text(
+                addedCartItems[cartID].productPrice.toString() + '€',
+                style: TextStyle(
+                    color: Theme.of(context).highlightColor, fontSize: 24),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.delete_outlined,
+                    color: Colors.red,
+                  ),
+                  onPressed: () {
+                    addedCartItems.removeAt(cartID);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => CartPage()));
+                  },
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:myapp/data/cart_data.dart';
 
 import 'home_page.dart';
-import 'models/offer_model.dart';
 import 'widgets/widgets.dart';
 
 class CartPage extends StatefulWidget {
@@ -153,10 +152,27 @@ class _CartPageState extends State<CartPage> {
                           Expanded(
                             // gesamter Inhaltsbereich
                             flex: 7,
-                            child: ListView.builder(
-                              itemCount: addedCartItems.length,
-                              itemBuilder: (context, index) =>
-                                  CartCard(cartID: index),
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  flex: 11,
+                                  child: ListView.builder(
+                                    itemCount: addedCartItems.length,
+                                    itemBuilder: (context, index) =>
+                                        CartCard(cartID: index),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 2,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(context).cardColor,
+                                      borderRadius: BorderRadius.circular(6),
+                                    ),
+                                    margin: EdgeInsets.all(4),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
