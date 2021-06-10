@@ -10,4 +10,3 @@ export 'top_banner_desktop.dart';
 export 'side_menu_button.dart';
 export 'change_theme_switch.dart';
 export 'cart_card.dart';
-export 'cart_amount.dart';

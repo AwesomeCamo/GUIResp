@@ -1,5 +1,7 @@
 import '../models/offer_model.dart';
 
+var sum = 0;
+
 final List<Offer> availableOffers = [
   Offer(
       name: 'Schwarzes T-Shirt',

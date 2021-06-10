@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/data/cart_data.dart';
+import 'package:myapp/data/data.dart';
 
 import 'home_page.dart';
 import 'widgets/widgets.dart';
@@ -152,7 +153,7 @@ class _CartPageState extends State<CartPage> {
                           Expanded(
                             // gesamter Inhaltsbereich
                             flex: 7,
-                            child: Column(
+                            child: Row(
                               children: [
                                 Expanded(
                                   flex: 11,
@@ -170,6 +171,24 @@ class _CartPageState extends State<CartPage> {
                                       borderRadius: BorderRadius.circular(6),
                                     ),
                                     margin: EdgeInsets.all(4),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          'Total:',
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .highlightColor,
+                                              fontSize: 24),
+                                        ),
+                                        Text(
+                                          addCostTotal().toString(),
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .highlightColor,
+                                              fontSize: 24),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
@@ -199,5 +218,13 @@ class _CartPageState extends State<CartPage> {
       ),
       margin: EdgeInsets.all(4),
     );
+  }
+
+  double addCostTotal() {
+    double totalSum = 0;
+    for (var i = 0; i < addedCartItems.length; i++) {
+      totalSum += addedCartItems[i].productPrice;
+    }
+    return totalSum;
   }
 }
