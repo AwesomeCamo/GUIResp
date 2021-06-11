@@ -48,12 +48,13 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                floatingActionButton: FloatingActionButton(
+                bottomNavigationBar: CustomBottomBar(),
+                /* floatingActionButton: FloatingActionButton(
                   onPressed: () => Navigator.push(context,
                       MaterialPageRoute(builder: (context) => CartPage())),
                   child: const Icon(Icons.shopping_cart),
                   backgroundColor: Colors.grey[600],
-                ),
+                ), */
               );
             } else if (constraints.maxWidth < 1440) {
               // Anzeige für Tablets und Mobile Phones im Landscape Modus
@@ -85,13 +86,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                floatingActionButton: FloatingActionButton(
-                  onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CartPage())),
-                  child: const Icon(Icons.shopping_cart),
-                  backgroundColor: Colors.grey[600],
-                  foregroundColor: Colors.black,
-                ), // Button um auf Einkaufswagen zuzugreifen
+                bottomNavigationBar: CustomBottomBar(),
               );
             } else {
               // Anzeige in Webansicht auf dem Desktop

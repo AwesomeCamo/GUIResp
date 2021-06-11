@@ -103,12 +103,7 @@ class _CartPageState extends State<CartPage> {
                     ),
                   ],
                 ),
-                /* floatingActionButton: FloatingActionButton(
-                  onPressed: () =>
-                      Navigator.of(context).popUntil((route) => route.isFirst),
-                  child: const Icon(Icons.home),
-                  backgroundColor: Colors.grey[600],
-                ), */ // Button um zurück auf Home Seite zu kommen
+                bottomNavigationBar: CustomBottomBar(),
               );
             } else if (constraints.maxWidth < 1440) {
               // Anzeige für Tablets und Mobile Phones im Landscape Modus
@@ -197,13 +192,7 @@ class _CartPageState extends State<CartPage> {
                     ),
                   ],
                 ),
-/*                 floatingActionButton: FloatingActionButton(
-                  onPressed: () =>
-                      Navigator.of(context).popUntil((route) => route.isFirst),
-                  child: const Icon(Icons.home),
-                  backgroundColor: Colors.grey[600],
-                  foregroundColor: Colors.black,
-                ),  */ // Button um zurück auf Home Seite zu kommen
+                bottomNavigationBar: CustomBottomBar(),
               );
             } else {
               // Anzeige in Webansicht auf dem Desktop
