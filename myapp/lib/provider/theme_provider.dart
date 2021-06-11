@@ -19,11 +19,6 @@ class MyThemes {
     primaryColorDark: Colors.grey[700],
     cardColor: Colors.grey[800],
     highlightColor: Colors.white,
-    textTheme: TextTheme(
-      bodyText1: TextStyle(
-        color: Colors.white,
-      ),
-    ),
   );
 
   static final lightMode = ThemeData(
