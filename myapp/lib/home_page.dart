@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: LayoutBuilder(
           builder: (context, constraints) {
-            if (constraints.maxWidth < 480) {
+            if (constraints.maxWidth < 600) {
               // Anzeige für Mobilgeräte
               return Scaffold(
                 extendBodyBehindAppBar: true,

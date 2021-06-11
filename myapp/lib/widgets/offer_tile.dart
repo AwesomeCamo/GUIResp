@@ -44,14 +44,17 @@ class _OfferTileState extends State<OfferTile> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(
-                  height: 40,
-                  width: 40,
+                  height: MediaQuery.of(context).size.width * 0.02,
+                  width: MediaQuery.of(context).size.width * 0.01,
                 ),
                 Column(
                   children: [
                     Text(
                       availableOffers[widget.offerID].name,
-                      style: TextStyle(color: Theme.of(context).highlightColor),
+                      style: TextStyle(
+                          color: Theme.of(context).highlightColor,
+                          fontSize:
+                              10 + MediaQuery.of(context).size.width * 0.005),
                     ),
                     Text(
                       availableOffers[widget.offerID].productPrice.toString() +
@@ -60,10 +63,13 @@ class _OfferTileState extends State<OfferTile> {
                     ), // Preis aus dem Listeneintrag holen und €-Zeichen anhängen
                   ],
                 ),
-                CircularIconButton(
-                  backgroundColor: Theme.of(context).primaryColorLight,
-                  icon: Icons.add_shopping_cart,
-                  iconSize: 20,
+                IconButton(
+                  padding: EdgeInsets.fromLTRB(8, 8, 0, 8),
+                  icon: Icon(
+                    Icons.add_shopping_cart_outlined,
+                  ),
+                  hoverColor: Colors.transparent,
+                  iconSize: 15 + MediaQuery.of(context).size.width * 0.01,
                   onPressed: () {
                     addedCartItems.add(
                       Offer(
@@ -79,7 +85,7 @@ class _OfferTileState extends State<OfferTile> {
                   tooltip: 'Zu Einkaufswagen hinzufügen',
                 ),
               ],
-            ), // Spacer um Preis ans untere Ende zu setzen
+            ),
           ],
         ),
       ),

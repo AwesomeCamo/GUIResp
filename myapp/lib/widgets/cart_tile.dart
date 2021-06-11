@@ -16,7 +16,7 @@ class CartCard extends StatelessWidget {
     return Card(
       child: Container(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+          padding: const EdgeInsets.fromLTRB(5, 0, 20, 0),
           child: Row(
             children: [
               Expanded(
@@ -27,8 +27,8 @@ class CartCard extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.all(16.0),
                       child: Container(
-                        height: 140,
-                        width: 140,
+                        height: 60 + MediaQuery.of(context).size.width * 0.03,
+                        width: 60 + MediaQuery.of(context).size.width * 0.03,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image:
@@ -43,14 +43,16 @@ class CartCard extends StatelessWidget {
                         addedCartItems[cartID].name,
                         style: TextStyle(
                             color: Theme.of(context).highlightColor,
-                            fontSize: 24),
+                            fontSize:
+                                8 + MediaQuery.of(context).size.width * 0.01),
                       ),
                     ),
                     Text(
                       addedCartItems[cartID].productPrice.toString() + '€',
                       style: TextStyle(
                           color: Theme.of(context).highlightColor,
-                          fontSize: 24),
+                          fontSize:
+                              8 + MediaQuery.of(context).size.width * 0.01),
                     ),
                   ],
                 ),
@@ -58,7 +60,7 @@ class CartCard extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(4),
                   child: IconButton(
                     icon: Icon(
                       Icons.delete_outlined,

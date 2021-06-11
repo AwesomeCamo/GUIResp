@@ -9,4 +9,4 @@ export 'top_banner_tablet.dart';
 export 'top_banner_desktop.dart';
 export 'side_menu_button.dart';
 export 'change_theme_switch.dart';
-export 'cart_card.dart';
+export 'cart_tile.dart';

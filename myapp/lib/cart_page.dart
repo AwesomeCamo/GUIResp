@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/data/cart_data.dart';
-import 'package:myapp/data/data.dart';
 
 import 'home_page.dart';
 import 'widgets/widgets.dart';
@@ -17,7 +16,7 @@ class _CartPageState extends State<CartPage> {
       body: SafeArea(
         child: LayoutBuilder(
           builder: (context, constraints) {
-            if (constraints.maxWidth < 480) {
+            if (constraints.maxWidth < 600) {
               // Anzeige für Mobilgeräte
               return Scaffold(
                 extendBodyBehindAppBar: true,
@@ -42,12 +41,72 @@ class _CartPageState extends State<CartPage> {
                     BannerShadow(),
                     Expanded(
                       flex: 6,
-                      child: Text('Einkaufswagen'),
+                      child: Column(
+                        children: [
+                          Expanded(
+                            // Auflistung aller Items im Einkaufswagen
+                            flex: 10,
+                            child: ListView.builder(
+                              padding: EdgeInsets.all(0),
+                              itemCount: addedCartItems.length,
+                              itemBuilder: (context, index) =>
+                                  CartCard(cartID: index),
+                            ),
+                          ),
+                          Expanded(
+                            // Untere Leiste zum Checkout mit Gesamtpreis
+                            flex: 2,
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Theme.of(context).cardColor,
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                              margin: EdgeInsets.all(4),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(0, 6, 0, 0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Total:',
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .highlightColor,
+                                              fontSize: 16),
+                                        ),
+                                        Text(
+                                          addCostTotal().toStringAsFixed(2),
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .highlightColor,
+                                              fontSize: 16),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.all(8),
+                                    child: ElevatedButton(
+                                        onPressed: () {},
+                                        child: Text('Checkout')),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
                 floatingActionButton: FloatingActionButton(
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePage())),
                   child: const Icon(Icons.home),
                   backgroundColor: Colors.grey[600],
                 ), // Button um zurück auf Home Seite zu kommen
@@ -76,14 +135,75 @@ class _CartPageState extends State<CartPage> {
                       ),
                     ),
                     Expanded(
-                      child: Text('Einkaufswagen'),
+                      // gesamter Inhaltsbereich
+                      flex: 7,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            flex: 11,
+                            child: Padding(
+                              // Padding 0 um Voreinstellung zu überschreiben
+                              padding: const EdgeInsets.all(0),
+                              child: ListView.builder(
+                                itemCount: addedCartItems.length,
+                                itemBuilder: (context, index) =>
+                                    CartCard(cartID: index),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Theme.of(context).cardColor,
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                              margin: EdgeInsets.all(4),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Total:',
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .highlightColor,
+                                              fontSize: 24),
+                                        ),
+                                        Text(
+                                          addCostTotal().toStringAsFixed(2),
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .highlightColor,
+                                              fontSize: 24),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.all(12),
+                                    child: ElevatedButton(
+                                        onPressed: () {},
+                                        child: Text('Checkout')),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
                 floatingActionButton: FloatingActionButton(
-                  onPressed: () {
-                    print('Button Pressed');
-                  },
+                  onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePage())),
                   child: const Icon(Icons.home),
                   backgroundColor: Colors.grey[600],
                   foregroundColor: Colors.black,
@@ -181,11 +301,17 @@ class _CartPageState extends State<CartPage> {
                                               fontSize: 24),
                                         ),
                                         Text(
-                                          addCostTotal().toString(),
+                                          addCostTotal().toStringAsFixed(2),
                                           style: TextStyle(
                                               color: Theme.of(context)
                                                   .highlightColor,
                                               fontSize: 24),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(12),
+                                          child: ElevatedButton(
+                                              onPressed: () {},
+                                              child: Text('Checkout')),
                                         ),
                                       ],
                                     ),
