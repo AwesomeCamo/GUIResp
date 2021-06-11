@@ -89,7 +89,7 @@ class _CartPageState extends State<CartPage> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.all(8),
+                                    padding: EdgeInsets.all(4),
                                     child: ElevatedButton(
                                         onPressed: () {},
                                         child: Text('Checkout')),

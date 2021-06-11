@@ -15,19 +15,19 @@ class CustomBottomBar extends StatelessWidget {
         children: [
           IconButton(
             icon: Icon(Icons.home),
-            iconSize: 40,
+            iconSize: 28,
             tooltip: 'Home',
             onPressed: () =>
                 Navigator.of(context).popUntil((route) => route.isFirst),
           ),
           IconButton(
               icon: Icon(Icons.person),
-              iconSize: 40,
+              iconSize: 28,
               tooltip: 'Profil',
               onPressed: () {}),
           IconButton(
             icon: Icon(Icons.shopping_cart),
-            iconSize: 40,
+            iconSize: 28,
             tooltip: 'Cart',
             onPressed: () => Navigator.push(
                 context, MaterialPageRoute(builder: (context) => CartPage())),
