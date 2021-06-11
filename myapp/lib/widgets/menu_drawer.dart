@@ -13,7 +13,7 @@ class MenuDrawer extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
       ),
-      width: MediaQuery.of(context).size.width * 0.75,
+      width: 220 + MediaQuery.of(context).size.width * 0.035,
       child: Column(
         children: [
           Expanded(
