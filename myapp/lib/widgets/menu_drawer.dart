@@ -65,8 +65,8 @@ class MenuDrawer extends StatelessWidget {
                 CreateMenuButton(
                   menuButtonIcon: Icons.home,
                   menuButtonText: 'Home',
-                  onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage())),
+                  onPressed: () =>
+                      Navigator.of(context).popUntil((route) => route.isFirst),
                 ),
                 CreateMenuButton(
                   menuButtonIcon: Icons.account_circle_rounded,

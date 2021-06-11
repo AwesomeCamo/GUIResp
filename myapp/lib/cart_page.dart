@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/data/cart_data.dart';
 
-import 'home_page.dart';
 import 'widgets/widgets.dart';
 
 class CartPage extends StatefulWidget {
@@ -105,8 +104,8 @@ class _CartPageState extends State<CartPage> {
                   ],
                 ),
                 floatingActionButton: FloatingActionButton(
-                  onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage())),
+                  onPressed: () =>
+                      Navigator.of(context).popUntil((route) => route.isFirst),
                   child: const Icon(Icons.home),
                   backgroundColor: Colors.grey[600],
                 ), // Button um zurück auf Home Seite zu kommen
@@ -141,14 +140,11 @@ class _CartPageState extends State<CartPage> {
                         children: [
                           Expanded(
                             flex: 11,
-                            child: Padding(
-                              // Padding 0 um Voreinstellung zu überschreiben
-                              padding: const EdgeInsets.all(0),
-                              child: ListView.builder(
-                                itemCount: addedCartItems.length,
-                                itemBuilder: (context, index) =>
-                                    CartCard(cartID: index),
-                              ),
+                            child: ListView.builder(
+                              padding: EdgeInsets.all(0),
+                              itemCount: addedCartItems.length,
+                              itemBuilder: (context, index) =>
+                                  CartCard(cartID: index),
                             ),
                           ),
                           Expanded(
@@ -202,8 +198,8 @@ class _CartPageState extends State<CartPage> {
                   ],
                 ),
                 floatingActionButton: FloatingActionButton(
-                  onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage())),
+                  onPressed: () =>
+                      Navigator.of(context).popUntil((route) => route.isFirst),
                   child: const Icon(Icons.home),
                   backgroundColor: Colors.grey[600],
                   foregroundColor: Colors.black,
@@ -228,10 +224,8 @@ class _CartPageState extends State<CartPage> {
                                   CreateMenuButton(
                                     menuButtonIcon: Icons.home,
                                     menuButtonText: 'Home',
-                                    onPressed: () => Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => HomePage())),
+                                    onPressed: () => Navigator.of(context)
+                                        .popUntil((route) => route.isFirst),
                                   ),
                                   CreateMenuButton(
                                     menuButtonIcon:

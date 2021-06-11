@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                   child: const Icon(Icons.shopping_cart),
                   backgroundColor: Colors.grey[600],
                   foregroundColor: Colors.black,
-                ), // Button um auf Einkaufswagen zuzugreifen TODO: Einkaufswagenfunktionalität hinzufügen
+                ), // Button um auf Einkaufswagen zuzugreifen
               );
             } else {
               // Anzeige in Webansicht auf dem Desktop
@@ -112,12 +112,8 @@ class _HomePageState extends State<HomePage> {
                                   CreateMenuButton(
                                     menuButtonIcon: Icons.home,
                                     menuButtonText: 'Home',
-                                    onPressed: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => HomePage(),
-                                      ),
-                                    ),
+                                    onPressed: () => Navigator.of(context)
+                                        .popUntil((route) => route.isFirst),
                                   ),
                                   CreateMenuButton(
                                     menuButtonIcon:

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/data/cart_data.dart';
 import 'package:myapp/models/offer_model.dart';
-import 'package:myapp/widgets/widgets.dart';
 import '../data/data.dart';
 import '../home_page.dart';
 
