@@ -118,7 +118,7 @@ class _CartPageState extends State<CartPage> {
                 body: Column(
                   children: [
                     Container(
-                      height: 120,
+                      height: 80,
                       child: Column(
                         children: [
                           Expanded(
@@ -131,10 +131,10 @@ class _CartPageState extends State<CartPage> {
                     Expanded(
                       // gesamter Inhaltsbereich
                       flex: 7,
-                      child: Column(
+                      child: Row(
                         children: [
                           Expanded(
-                            flex: 11,
+                            flex: 7,
                             child: ListView.builder(
                               padding: EdgeInsets.all(0),
                               itemCount: addedCartItems.length,

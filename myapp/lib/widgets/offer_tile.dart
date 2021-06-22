@@ -25,6 +25,7 @@ class _OfferTileState extends State<OfferTile> {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
+        // Container für Anzeige und Positionierung des Angebotsbildes
         margin: EdgeInsets.all(6),
         decoration: BoxDecoration(
           color: Theme.of(context).cardColor,

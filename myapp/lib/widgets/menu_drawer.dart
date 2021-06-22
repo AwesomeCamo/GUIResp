@@ -34,8 +34,8 @@ class MenuDrawer extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          height: 50,
-                          width: 120,
+                          height: 40,
+                          width: 90,
                           decoration: BoxDecoration(
                             color: Colors.grey,
                             borderRadius: BorderRadius.circular(25),
@@ -44,7 +44,7 @@ class MenuDrawer extends StatelessWidget {
                             children: [
                               Icon(
                                 Icons.lightbulb_outline,
-                                size: 40,
+                                size: 25,
                               ),
                               ChangeThemeSwitch(),
                             ],

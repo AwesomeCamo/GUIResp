@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                 body: Column(
                   children: [
                     Container(
-                      height: 120,
+                      height: 80,
                       child: Column(
                         children: [
                           Expanded(
