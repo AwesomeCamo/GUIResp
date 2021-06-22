@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                     Expanded(child: LogoBannerTop()),
                     BannerShadow(),
                     Expanded(
-                      flex: 6,
+                      flex: 11,
                       child: TileContainer(
                         anzahlTilesNebeneinander: 2,
                       ),

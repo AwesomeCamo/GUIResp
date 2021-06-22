@@ -25,13 +25,6 @@ class TabletTopBanner extends StatelessWidget {
           tooltip: 'Suchen',
           backgroundColor: Colors.grey,
         ),
-        CircularIconButton(
-          icon: Icons.person,
-          iconSize: 40,
-          onPressed: () => print('Profil angeklickt'),
-          tooltip: 'Mein Profil',
-          backgroundColor: Colors.grey,
-        ),
       ],
     );
   }
