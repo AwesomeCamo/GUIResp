@@ -72,8 +72,8 @@ class MenuDrawer extends StatelessWidget {
                 CreateMenuButton(
                   menuButtonIcon: Icons.account_circle_rounded,
                   menuButtonText: 'Profil',
-                  onPressed: () => Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => ProfilPage())),
+                  onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => ProfilPage())),
                 ),
                 CreateMenuButton(
                   menuButtonIcon: Icons.trending_up_rounded,
