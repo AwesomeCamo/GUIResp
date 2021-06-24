@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../profil_page.dart';
 import 'widgets.dart';
 
 class TabletTopBanner extends StatelessWidget {
@@ -23,6 +24,14 @@ class TabletTopBanner extends StatelessWidget {
           iconSize: 40,
           onPressed: () => print('Suchen'),
           tooltip: 'Suchen',
+          backgroundColor: Colors.grey,
+        ),
+        CircularIconButton(
+          icon: Icons.person,
+          iconSize: 40,
+          onPressed: () => Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => ProfilPage())),
+          tooltip: 'Mein Profil',
           backgroundColor: Colors.grey,
         ),
       ],

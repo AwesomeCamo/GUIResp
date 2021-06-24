@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../cart_page.dart';
+import '../profil_page.dart';
 
 class CustomBottomBar extends StatelessWidget {
   const CustomBottomBar({
@@ -24,7 +25,8 @@ class CustomBottomBar extends StatelessWidget {
               icon: Icon(Icons.person),
               iconSize: 28,
               tooltip: 'Profil',
-              onPressed: () {}),
+              onPressed: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => ProfilPage()))),
           IconButton(
             icon: Icon(Icons.shopping_cart),
             iconSize: 28,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/cart_page.dart';
 import 'package:myapp/data/cart_data.dart';
 
+import '../profil_page.dart';
 import 'widgets.dart';
 
 /* Gesamte oberer Teil der Desktopfassung, mit Logo, 
@@ -84,7 +85,8 @@ class DesktopTopBanner extends StatelessWidget {
                 CircularIconButton(
                   icon: Icons.person,
                   iconSize: 40,
-                  onPressed: () => print('Profil angeklickt'),
+                  onPressed: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => ProfilPage())),
                   tooltip: 'Mein Profil',
                   backgroundColor: Colors.grey,
                 ),

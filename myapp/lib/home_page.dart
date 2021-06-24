@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/profil_page.dart';
 
 import 'cart_page.dart';
 import 'widgets/widgets.dart';
@@ -114,7 +115,10 @@ class _HomePageState extends State<HomePage> {
                                     menuButtonIcon:
                                         Icons.account_circle_rounded,
                                     menuButtonText: 'Profil',
-                                    onPressed: () => print('button pressed'),
+                                    onPressed: () => Navigator.of(context)
+                                        .push(
+                                        MaterialPageRoute(builder: (context) => ProfilPage())
+                                    )
                                   ),
                                   CreateMenuButton(
                                     menuButtonIcon: Icons.trending_up_rounded,
