@@ -40,7 +40,7 @@ class _CartPageState extends State<CartPage> {
                     Expanded(child: LogoBannerTop()),
                     BannerShadow(),
                     Expanded(
-                      flex: 6,
+                      flex: 11,
                       child: Column(
                         children: [
                           Expanded(

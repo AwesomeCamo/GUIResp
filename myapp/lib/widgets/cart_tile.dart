@@ -20,7 +20,7 @@ class CartCard extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                flex: 7,
+                flex: 15,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -44,7 +44,7 @@ class CartCard extends StatelessWidget {
                         style: TextStyle(
                             color: Theme.of(context).highlightColor,
                             fontSize:
-                                8 + MediaQuery.of(context).size.width * 0.01),
+                                12 + MediaQuery.of(context).size.width * 0.01),
                       ),
                     ),
                     Text(
@@ -52,13 +52,13 @@ class CartCard extends StatelessWidget {
                       style: TextStyle(
                           color: Theme.of(context).highlightColor,
                           fontSize:
-                              8 + MediaQuery.of(context).size.width * 0.01),
+                              12 + MediaQuery.of(context).size.width * 0.01),
                     ),
                   ],
                 ),
               ),
               Expanded(
-                flex: 2,
+                flex: 1,
                 child: Padding(
                   padding: const EdgeInsets.all(4),
                   child: IconButton(
