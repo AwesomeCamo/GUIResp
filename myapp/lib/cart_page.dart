@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/data/cart_data.dart';
 
+import 'profil_page.dart';
 import 'widgets/widgets.dart';
 
 class CartPage extends StatefulWidget {
@@ -220,7 +221,10 @@ class _CartPageState extends State<CartPage> {
                                     menuButtonIcon:
                                         Icons.account_circle_rounded,
                                     menuButtonText: 'Profil',
-                                    onPressed: () => print('button pressed'),
+                                    onPressed: () => Navigator.of(context)
+                                        .push(
+                                        MaterialPageRoute(builder: (context) => ProfilPage())
+                                    )
                                   ),
                                   CreateMenuButton(
                                     menuButtonIcon: Icons.trending_up_rounded,

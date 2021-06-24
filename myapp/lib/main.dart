@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'home_page.dart';
+import 'profil_page.dart';
 import 'provider/theme_provider.dart';
 
 void main() {
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
             theme: MyThemes.lightMode,
             darkTheme: MyThemes.darkMode,
             home: HomePage(),
+            routes: <String, WidgetBuilder>{
+              '/profil': (BuildContext context) => ProfilPage()
+            }
           );
         },
       );

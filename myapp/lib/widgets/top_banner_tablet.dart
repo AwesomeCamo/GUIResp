@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../profil_page.dart';
 import 'widgets.dart';
 
 class TabletTopBanner extends StatelessWidget {
@@ -28,7 +29,8 @@ class TabletTopBanner extends StatelessWidget {
         CircularIconButton(
           icon: Icons.person,
           iconSize: 40,
-          onPressed: () => print('Profil angeklickt'),
+          onPressed: () => Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => ProfilPage())),
           tooltip: 'Mein Profil',
           backgroundColor: Colors.grey,
         ),
