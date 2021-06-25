@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/contact_page.dart';
 import 'package:provider/provider.dart';
 
 import 'home_page.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
             darkTheme: MyThemes.darkMode,
             home: HomePage(),
             routes: <String, WidgetBuilder>{
-              '/profil': (BuildContext context) => ProfilPage()
+              '/profil': (BuildContext context) => ProfilPage(),
+              '/contact': (BuildContext context) => ContactPage(),
             }
           );
         },
