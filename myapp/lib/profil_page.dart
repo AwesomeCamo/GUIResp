@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/widgets/profil_action_buttons.dart';
+import 'package:myapp/widgets/profil_edit_button.dart';
 
 import 'cart_page.dart';
 import 'widgets/widgets.dart';
@@ -107,7 +108,7 @@ class _ProfilPageState extends State<ProfilPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: <Widget>[
                                       _status
-                                          ? _getEditIcon()
+                                          ? ProfilEditButton(onStatusChanged: updateStatus)
                                           : new Container(),
                                     ],
                                   )
@@ -332,7 +333,7 @@ class _ProfilPageState extends State<ProfilPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: <Widget>[
                                       _status
-                                          ? _getEditIcon()
+                                          ? ProfilEditButton(onStatusChanged: updateStatus)
                                           : new Container(),
                                     ],
                                   )
@@ -515,25 +516,6 @@ class _ProfilPageState extends State<ProfilPage> {
           ));
         }),
       ),
-    );
-  }
-
-  Widget _getEditIcon() {
-    return new GestureDetector(
-      child: new CircleAvatar(
-        backgroundColor: Colors.red,
-        radius: 14.0,
-        child: new Icon(
-          Icons.edit,
-          color: Colors.white,
-          size: 16.0,
-        ),
-      ),
-      onTap: () {
-        setState(() {
-          _status = false;
-        });
-      },
     );
   }
 
