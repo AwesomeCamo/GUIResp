@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             themeMode: themeProvider.themeMode,
             theme: MyThemes.lightMode,
             darkTheme: MyThemes.darkMode,
-            home: HomePage(),
+            home: ProfilPage(),
             routes: <String, WidgetBuilder>{
               '/profil': (BuildContext context) => ProfilPage(),
               '/contact': (BuildContext context) => ContactPage(),
