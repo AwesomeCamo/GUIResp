@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/widgets/profil_action_buttons.dart';
 
 import 'cart_page.dart';
 import 'widgets/widgets.dart';
@@ -291,7 +292,7 @@ class _ProfilPageState extends State<ProfilPage> {
                                   ),
                                 ],
                               )),
-                          !_status ? _getActionButtons() : new Container(),
+                          !_status ? ProfilActionButtons(onStatusChanged: updateStatus) : new Container(),
                         ],
                       ),
                     ),
@@ -504,7 +505,7 @@ class _ProfilPageState extends State<ProfilPage> {
                                   ),
                                 ],
                               )),
-                          !_status ? _getActionButtons() : new Container(),
+                          !_status ? ProfilActionButtons(onStatusChanged: updateStatus,) : new Container(),
                         ],
                       ),
                     ),
@@ -513,58 +514,6 @@ class _ProfilPageState extends State<ProfilPage> {
             ),
           ));
         }),
-      ),
-    );
-  }
-
-  Widget _getActionButtons() {
-    return Padding(
-      padding: EdgeInsets.only(left: 25.0, right: 25.0, top: 45.0),
-      child: new Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(right: 10.0),
-              child: Container(
-                  child: new RaisedButton(
-                child: new Text("Speichern"),
-                textColor: Colors.white,
-                color: Colors.green,
-                onPressed: () {
-                  setState(() {
-                    _status = true;
-                    FocusScope.of(context).requestFocus(new FocusNode());
-                  });
-                },
-                shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20.0)),
-              )),
-            ),
-            flex: 2,
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(left: 10.0),
-              child: Container(
-                  child: new RaisedButton(
-                child: new Text("Abbrechen"),
-                textColor: Colors.white,
-                color: Colors.red,
-                onPressed: () {
-                  setState(() {
-                    _status = true;
-                    FocusScope.of(context).requestFocus(new FocusNode());
-                  });
-                },
-                shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20.0)),
-              )),
-            ),
-            flex: 2,
-          ),
-        ],
       ),
     );
   }
@@ -586,5 +535,11 @@ class _ProfilPageState extends State<ProfilPage> {
         });
       },
     );
+  }
+
+  void updateStatus(bool status) {
+    setState(() {
+      _status = status;
+    });
   }
 }
