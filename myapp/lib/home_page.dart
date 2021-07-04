@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:myapp/profil_page.dart';
 import 'package:myapp/profil_page_bad_example.dart';
 
-import 'cart_page.dart';
 import 'widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
@@ -115,12 +114,13 @@ class _HomePageState extends State<HomePage> {
                                               builder: (context) =>
                                                   ProfilPage()))),
                                   CreateMenuButton(
-                                    menuButtonIcon: Icons.account_circle_rounded,
-                                    menuButtonText: 'Profil-Schlecht',
-                                    onPressed: () => Navigator.of(context)
-                                        .push(MaterialPageRoute(
-                                        builder: (context) =>
-                                            ProfilPageBadExample()))),
+                                      menuButtonIcon:
+                                          Icons.account_circle_rounded,
+                                      menuButtonText: 'Profil-Schlecht',
+                                      onPressed: () => Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProfilPageBadExample()))),
                                   CreateMenuButton(
                                     menuButtonIcon:
                                         Icons.bookmark_border_rounded,
@@ -149,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Expanded(
                             // gesamter Inhaltsbereich
-                            flex: 7,
+                            flex: 6,
                             child: Row(
                               children: [
                                 Expanded(

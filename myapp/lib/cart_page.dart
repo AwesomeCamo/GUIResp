@@ -136,7 +136,7 @@ class _CartPageState extends State<CartPage> {
                       child: Row(
                         children: [
                           Expanded(
-                            flex: 7,
+                            flex: 6,
                             child: ListView.builder(
                               padding: EdgeInsets.all(0),
                               itemCount: addedCartItems.length,
@@ -219,21 +219,21 @@ class _CartPageState extends State<CartPage> {
                                         .popUntil((route) => route.isFirst),
                                   ),
                                   CreateMenuButton(
-                                    menuButtonIcon:
-                                        Icons.account_circle_rounded,
-                                    menuButtonText: 'Profil',
-                                    onPressed: () => Navigator.of(context)
-                                        .push(
-                                        MaterialPageRoute(builder: (context) => ProfilPage())
-                                    )
-                                  ),
+                                      menuButtonIcon:
+                                          Icons.account_circle_rounded,
+                                      menuButtonText: 'Profil',
+                                      onPressed: () => Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProfilPage()))),
                                   CreateMenuButton(
-                                      menuButtonIcon: Icons.account_circle_rounded,
+                                      menuButtonIcon:
+                                          Icons.account_circle_rounded,
                                       menuButtonText: 'Profil-Schlecht',
                                       onPressed: () => Navigator.of(context)
                                           .push(MaterialPageRoute(
-                                          builder: (context) =>
-                                              ProfilPageBadExample()))),
+                                              builder: (context) =>
+                                                  ProfilPageBadExample()))),
                                   CreateMenuButton(
                                     menuButtonIcon:
                                         Icons.bookmark_border_rounded,
@@ -262,7 +262,7 @@ class _CartPageState extends State<CartPage> {
                           ),
                           Expanded(
                             // gesamter Inhaltsbereich
-                            flex: 7,
+                            flex: 6,
                             child: Row(
                               children: [
                                 Expanded(

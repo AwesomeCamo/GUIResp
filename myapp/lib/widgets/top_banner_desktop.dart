@@ -85,8 +85,8 @@ class DesktopTopBanner extends StatelessWidget {
                 CircularIconButton(
                   icon: Icons.person,
                   iconSize: 40,
-                  onPressed: () => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => ProfilPage())),
+                  onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => ProfilPage())),
                   tooltip: 'Mein Profil',
                   backgroundColor: Colors.grey,
                 ),

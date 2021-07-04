@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../home_page.dart';
 import '../profil_page.dart';
 import '../profil_page_bad_example.dart';
 import 'widgets.dart';
@@ -79,10 +78,9 @@ class MenuDrawer extends StatelessWidget {
                 CreateMenuButton(
                     menuButtonIcon: Icons.account_circle_rounded,
                     menuButtonText: 'Profil-Schlecht',
-                    onPressed: () => Navigator.of(context)
-                        .push(MaterialPageRoute(
-                        builder: (context) =>
-                            ProfilPageBadExample()))),
+                    onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (context) => ProfilPageBadExample()))),
                 CreateMenuButton(
                   menuButtonIcon: Icons.bookmark_border_rounded,
                   menuButtonText: 'Bookmarked',
