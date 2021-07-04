@@ -29,6 +29,43 @@ class _ProfilPageState extends State<ProfilPage> {
                     children: <Widget>[ProfilBackButton(), ProfilAvatar()],
                   ),
                 ),
+                Container(
+                  width: breakPoint,
+                  child: Padding(
+                      padding: EdgeInsets.only(
+                          left: 25.0, right: 25.0, top: 25.0),
+                      child: new Row(
+                        mainAxisAlignment:
+                        MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.max,
+                        children: <Widget>[
+                          new Column(
+                            mainAxisAlignment:
+                            MainAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              new Text(
+                                'Persönliche Informationen',
+                                style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                          new Column(
+                            mainAxisAlignment:
+                            MainAxisAlignment.end,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              _status
+                                  ? ProfilEditButton(
+                                  onStatusChanged: updateStatus)
+                                  : new Container(),
+                            ],
+                          )
+                        ],
+                      )),
+                ),
                 Expanded(
                   child: new Container(
                     color: Color(0xffFFFFFF),
@@ -43,40 +80,6 @@ class _ProfilPageState extends State<ProfilPage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
-                              Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 25.0, right: 25.0, top: 25.0),
-                                  child: new Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: <Widget>[
-                                      new Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: <Widget>[
-                                          new Text(
-                                            'Persönliche Informationen',
-                                            style: TextStyle(
-                                                fontSize: 18.0,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                        ],
-                                      ),
-                                      new Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: <Widget>[
-                                          _status
-                                              ? ProfilEditButton(
-                                                  onStatusChanged: updateStatus)
-                                              : new Container(),
-                                        ],
-                                      )
-                                    ],
-                                  )),
                               ProfilInformationLine(
                                   status: _status,
                                   text: 'Name',
