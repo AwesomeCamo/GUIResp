@@ -38,7 +38,6 @@ class _ProfilPageState extends State<ProfilPage> {
                       child: SingleChildScrollView(
                         child: ConstrainedBox(
                           constraints: BoxConstraints(
-                            minHeight: constraints.maxHeight,
                           ),
                           child: new Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
