@@ -22,77 +22,107 @@ class _ProfilPageState extends State<ProfilPage> {
       body: SafeArea(
         child: LayoutBuilder(builder: (context, constraints) {
           return Scaffold(
-              body: Column(
+            body: Column(
               children: <Widget>[
                 new Container(
                   child: new Column(
-                    children: <Widget>[
-                      ProfilBackButton(),
-                      ProfilAvatar()
-                    ],
+                    children: <Widget>[ProfilBackButton(), ProfilAvatar()],
                   ),
                 ),
-              //  if (constraints.maxWidth < 780)
-                  new Container(
+                //  if (constraints.maxWidth < 780)
+                Expanded(
+                  child: new Container(
                     color: Color(0xffFFFFFF),
                     width: breakPoint,
                     child: Padding(
                       padding: EdgeInsets.only(bottom: 25.0),
-                      child: new Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Padding(
-                              padding: EdgeInsets.only(
-                                  left: 25.0, right: 25.0, top: 25.0),
-                              child: new Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                mainAxisSize: MainAxisSize.max,
-                                children: <Widget>[
-                                  new Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
+                      child: SingleChildScrollView(
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minHeight: constraints.maxHeight,
+                          ),
+                          child: new Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 25.0, right: 25.0, top: 25.0),
+                                  child: new Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisSize: MainAxisSize.max,
                                     children: <Widget>[
-                                      new Text(
-                                        'Persönliche Informationen',
-                                        style: TextStyle(
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.bold),
+                                      new Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: <Widget>[
+                                          new Text(
+                                            'Persönliche Informationen',
+                                            style: TextStyle(
+                                                fontSize: 18.0,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ],
                                       ),
+                                      new Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: <Widget>[
+                                          _status
+                                              ? ProfilEditButton(
+                                                  onStatusChanged: updateStatus)
+                                              : new Container(),
+                                        ],
+                                      )
                                     ],
-                                  ),
-                                  new Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: <Widget>[
-                                      _status
-                                          ? ProfilEditButton(
-                                              onStatusChanged: updateStatus)
-                                          : new Container(),
-                                    ],
-                                  )
-                                ],
-                              )),
-                          ProfilInformationLine(status: _status, text: 'Name', placeholder: "Gebe deinen Namen ein..."),
-                          ProfilInformationLine(status: _status, text: 'Email', placeholder: "Gebe deine Email ein..."),
-                          ProfilInformationLine(status: _status, text: 'Telefon', placeholder: "Gebe deine Nummer ein..."),
-                          if (constraints.maxWidth < breakPoint)
-                            ProfilInformationLine(status: _status, text: 'PLZ', placeholder: "Gebe deine Postleizahl an..."),
-                          if (constraints.maxWidth < breakPoint)
-                            ProfilInformationLine(status: _status, text: 'Stadt', placeholder: "Gebe deine Stadt an..."),
-                          if (constraints.maxWidth >= breakPoint)
-                            ProfilInformationBundle(status: _status, text: "text", placeholder: "placeholder"),
-                        ],
+                                  )),
+                              ProfilInformationLine(
+                                  status: _status,
+                                  text: 'Name',
+                                  placeholder: "Gebe deinen Namen ein..."),
+                              ProfilInformationLine(
+                                  status: _status,
+                                  text: 'Email',
+                                  placeholder: "Gebe deine Email ein..."),
+                              ProfilInformationLine(
+                                  status: _status,
+                                  text: 'Telefon',
+                                  placeholder: "Gebe deine Nummer ein..."),
+                              if (constraints.maxWidth < breakPoint)
+                                ProfilInformationLine(
+                                    status: _status,
+                                    text: 'PLZ',
+                                    placeholder:
+                                        "Gebe deine Postleizahl an..."),
+                              if (constraints.maxWidth < breakPoint)
+                                ProfilInformationLine(
+                                    status: _status,
+                                    text: 'Stadt',
+                                    placeholder: "Gebe deine Stadt an..."),
+                              if (constraints.maxWidth >= breakPoint)
+                                ProfilInformationBundle(
+                                    status: _status,
+                                    text: "text",
+                                    placeholder: "placeholder"),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                  new Container(
-                    child: !_status
-                        ? ProfilActionButtons(
-                        onStatusChanged: updateStatus)
-                        : new Container(),
-                  )
+                ),
+                new Container(
+                  child: !_status
+                      ? ProfilActionButtons(onStatusChanged: updateStatus)
+                      : new Container(),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                  width: MediaQuery.of(context).size.width,
+                ),
               ],
             ),
           );

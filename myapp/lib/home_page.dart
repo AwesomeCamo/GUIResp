@@ -50,12 +50,6 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 bottomNavigationBar: CustomBottomBar(),
-                /* floatingActionButton: FloatingActionButton(
-                  onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CartPage())),
-                  child: const Icon(Icons.shopping_cart),
-                  backgroundColor: Colors.grey[600],
-                ), */
               );
             } else if (constraints.maxWidth < 1440) {
               // Anzeige für Tablets und Mobile Phones im Landscape Modus
@@ -112,14 +106,13 @@ class _HomePageState extends State<HomePage> {
                                         .popUntil((route) => route.isFirst),
                                   ),
                                   CreateMenuButton(
-                                    menuButtonIcon:
-                                        Icons.account_circle_rounded,
-                                    menuButtonText: 'Profil',
-                                    onPressed: () => Navigator.of(context)
-                                        .push(
-                                        MaterialPageRoute(builder: (context) => ProfilPage())
-                                    )
-                                  ),
+                                      menuButtonIcon:
+                                          Icons.account_circle_rounded,
+                                      menuButtonText: 'Profil',
+                                      onPressed: () => Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProfilPage()))),
                                   CreateMenuButton(
                                     menuButtonIcon: Icons.trending_up_rounded,
                                     menuButtonText: 'Beliebt',

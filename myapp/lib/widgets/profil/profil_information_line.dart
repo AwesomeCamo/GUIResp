@@ -15,12 +15,10 @@ class ProfilInformationLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: <Widget>[
         Padding(
-            padding: EdgeInsets.only(
-                left: 25.0, right: 25.0, top: 25.0),
+            padding: EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
             child: new Row(
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
@@ -29,23 +27,19 @@ class ProfilInformationLine extends StatelessWidget {
                     new Text(
                       text,
                       style: TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold),
+                          fontSize: 16.0, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
               ],
             )),
         Padding(
-            padding: EdgeInsets.only(
-                left: 25.0, right: 25.0, top: 2.0),
+            padding: EdgeInsets.only(left: 25.0, right: 25.0, top: 2.0),
             child: new Row(
               children: <Widget>[
                 new Flexible(
                   child: new TextField(
-                    decoration: InputDecoration(
-                        hintText: placeholder
-                    ),
+                    decoration: InputDecoration(hintText: placeholder),
                     enabled: !status,
                     autofocus: !status,
                   ),
