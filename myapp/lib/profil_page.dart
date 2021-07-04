@@ -29,7 +29,6 @@ class _ProfilPageState extends State<ProfilPage> {
                     children: <Widget>[ProfilBackButton(), ProfilAvatar()],
                   ),
                 ),
-                //  if (constraints.maxWidth < 780)
                 Expanded(
                   child: new Container(
                     color: Color(0xffFFFFFF),
@@ -115,6 +114,7 @@ class _ProfilPageState extends State<ProfilPage> {
                   ),
                 ),
                 new Container(
+                  width: breakPoint,
                   child: !_status
                       ? ProfilActionButtons(onStatusChanged: updateStatus)
                       : new Container(),
