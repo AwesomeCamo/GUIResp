@@ -22,7 +22,7 @@ class ProfilBackButton extends StatelessWidget {
                     .popUntil((route) => route.isFirst),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 9.0, left: 10.0),
+                padding: EdgeInsets.only(top: 10.0, left: 10.0),
                 child: new Text('Profil',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,

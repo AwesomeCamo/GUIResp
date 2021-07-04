@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/data/cart_data.dart';
+import 'package:myapp/profil_page_bad_example.dart';
 
 import 'profil_page.dart';
 import 'widgets/widgets.dart';
@@ -227,10 +228,12 @@ class _CartPageState extends State<CartPage> {
                                     )
                                   ),
                                   CreateMenuButton(
-                                    menuButtonIcon: Icons.trending_up_rounded,
-                                    menuButtonText: 'Beliebt',
-                                    onPressed: () => print('button pressed'),
-                                  ),
+                                      menuButtonIcon: Icons.account_circle_rounded,
+                                      menuButtonText: 'Profil-Schlecht',
+                                      onPressed: () => Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                          builder: (context) =>
+                                              ProfilPageBadExample()))),
                                   CreateMenuButton(
                                     menuButtonIcon:
                                         Icons.bookmark_border_rounded,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../home_page.dart';
 import '../profil_page.dart';
+import '../profil_page_bad_example.dart';
 import 'widgets.dart';
 
 /* Drawermenü welches in Mobil- und Tabletfassung durch Drücken des 
@@ -76,10 +77,12 @@ class MenuDrawer extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => ProfilPage())),
                 ),
                 CreateMenuButton(
-                  menuButtonIcon: Icons.trending_up_rounded,
-                  menuButtonText: 'Beliebt',
-                  onPressed: () => print('button pressed'),
-                ),
+                    menuButtonIcon: Icons.account_circle_rounded,
+                    menuButtonText: 'Profil-Schlecht',
+                    onPressed: () => Navigator.of(context)
+                        .push(MaterialPageRoute(
+                        builder: (context) =>
+                            ProfilPageBadExample()))),
                 CreateMenuButton(
                   menuButtonIcon: Icons.bookmark_border_rounded,
                   menuButtonText: 'Bookmarked',
