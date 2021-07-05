@@ -81,7 +81,8 @@ class _CartPageState extends State<CartPage> {
                                               fontSize: 16),
                                         ),
                                         Text(
-                                          addCostTotal().toStringAsFixed(2),
+                                          addCostTotal().toStringAsFixed(2) +
+                                              "€",
                                           style: TextStyle(
                                               color: Theme.of(context)
                                                   .highlightColor,
@@ -167,14 +168,15 @@ class _CartPageState extends State<CartPage> {
                                           style: TextStyle(
                                               color: Theme.of(context)
                                                   .highlightColor,
-                                              fontSize: 24),
+                                              fontSize: 20),
                                         ),
                                         Text(
-                                          addCostTotal().toStringAsFixed(2),
+                                          addCostTotal().toStringAsFixed(2) +
+                                              "€",
                                           style: TextStyle(
                                               color: Theme.of(context)
                                                   .highlightColor,
-                                              fontSize: 24),
+                                              fontSize: 20),
                                         ),
                                       ],
                                     ),
@@ -291,7 +293,8 @@ class _CartPageState extends State<CartPage> {
                                               fontSize: 24),
                                         ),
                                         Text(
-                                          addCostTotal().toStringAsFixed(2),
+                                          addCostTotal().toStringAsFixed(2) +
+                                              "€",
                                           style: TextStyle(
                                               color: Theme.of(context)
                                                   .highlightColor,

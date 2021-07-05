@@ -15,18 +15,21 @@ class TileContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      primary: false,
-      padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-      crossAxisCount: anzahlTilesNebeneinander,
-      children: [
-        for (var i = 0; i < availableOffers.length; i++) OfferTile(offerID: i),
-      ],
-      /* For-Schleife iteriert durch die Liste aller Angebote und gibt sie
-      in einer scrollbaren Ansicht aus, deren Elementanzahl gleich der Anzahl 
-      der Objekte der Liste ist */
+    return Scrollbar(
+      child: GridView.count(
+        primary: false,
+        padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        crossAxisCount: anzahlTilesNebeneinander,
+        children: [
+          for (var i = 0; i < availableOffers.length; i++)
+            OfferTile(offerID: i),
+        ],
+        /* For-Schleife iteriert durch die Liste aller Angebote und gibt sie
+        in einer scrollbaren Ansicht aus, deren Elementanzahl gleich der Anzahl 
+        der Objekte der Liste ist */
+      ),
     );
   }
 }
