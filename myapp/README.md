@@ -1,16 +1,20 @@
-# myapp
+# SmartBuy
 
-A new Flutter application.
+Eine Projektarbeit zum Modul Programmieren graphischer Oberflächen im Sommersemester 21
 
-## Getting Started
+## Anleitung
 
-This project is a starting point for a Flutter application.
+Zur Ausführung der Applikation benötigen Sie zunächst eine funktionierende Flutter Installation
+Halten Sie sich hierfür an die offizielle Dokumentation unter [flutter.dev](https://flutter.dev/docs/get-started/install)
 
-A few resources to get you started if this is your first Flutter project:
+Danach können Sie sich per Clone oder ZIP den Code in das gewünschte Verzeichnis herunterladen.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Begeben Sie sich zur Ausführung bitte in das Verzeichnis, in dem sie den Code gespeichert haben und 
+führen sie das Kommando **"flutter run"** aus
+Um eine möglichst gute Vorstellung der responsiven Eigenschaften zu bekommen,
+empfehlen wir zunächst eine Ausführung mit einem Webbrowser ihrer Wahl.
+Über die Option "-d Chrome" kann man beispielsweise Google Chrome als Browser wählen.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Alternativ ist es auch möglich Android Studio und einen Emulator zu verwenden.
+Starten sie hierzu den Emulator des gewünschten Endgeräts und drücken sie Shift+F10, 
+oder den grünen Play Button um main.dart auszuführen
