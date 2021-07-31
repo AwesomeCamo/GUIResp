@@ -1,6 +1,6 @@
 # SmartBuy
 
-Eine Projektarbeit zum Modul Programmieren graphischer Oberflächen im Sommersemester 21
+Eine Projektarbeit zum Modul Programmieren graphischer Oberflächen im Sommersemester 21 zum Thema Responsive Design
 
 ## Anleitung
 
