@@ -22,6 +22,6 @@ Alternativ ist es auch möglich Android Studio und einen Emulator zu verwenden.
 Öffnen sie hierzu das Projekt in Android Studio und starten Sie den Emulator des gewünschten Endgeräts, dann drücken Sie Shift+F10, 
 oder den grünen Play Button um main.dart auszuführen.
 
-### Autoren
+## Autoren
 
 Marco Schmitz, Robin Scherer
