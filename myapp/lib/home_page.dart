@@ -174,16 +174,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-/* farbige Box zur Vereinfachung der Anordnung von Elementen */
-
-  Container buildColoredBox(Color color) {
-    return Container(
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(6),
-      ),
-      margin: EdgeInsets.all(4),
-    );
-  }
 }

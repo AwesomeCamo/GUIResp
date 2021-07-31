@@ -329,18 +329,6 @@ class _CartPageState extends State<CartPage> {
     );
   }
 
-/* farbige Box zur Vereinfachung der Anordnung von Elementen */
-
-  Container buildColoredBox(Color color) {
-    return Container(
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(6),
-      ),
-      margin: EdgeInsets.all(4),
-    );
-  }
-
   double addCostTotal() {
     double totalSum = 0;
     for (var i = 0; i < addedCartItems.length; i++) {
