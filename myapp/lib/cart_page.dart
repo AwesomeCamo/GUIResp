@@ -269,10 +269,12 @@ class _CartPageState extends State<CartPage> {
                               children: [
                                 Expanded(
                                   flex: 11,
-                                  child: ListView.builder(
-                                    itemCount: addedCartItems.length,
-                                    itemBuilder: (context, index) =>
-                                        CartCard(cartID: index),
+                                  child: Scrollbar(
+                                    child: ListView.builder(
+                                      itemCount: addedCartItems.length,
+                                      itemBuilder: (context, index) =>
+                                          CartCard(cartID: index),
+                                    ),
                                   ),
                                 ),
                                 Expanded(

@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                 bottomNavigationBar: CustomBottomBar(),
               );
             } else {
-              // Anzeige in Webansicht auf dem Desktop
+              // Anzeige in Webansicht auf dem Desktop ab 1440px Breite
               return Container(
                 child: Column(
                   children: [

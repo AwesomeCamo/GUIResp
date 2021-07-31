@@ -14,9 +14,9 @@ final List<Offer> availableOffers = [
       offerImage: './assets/tshirts/cyan.png',
       productPrice: 21.99),
   Offer(
-      name: 'Blaues T-Shirt',
-      offerImage: './assets/tshirts/darkblue.png',
-      productPrice: 24.99),
+      name: 'Pinkes T-Shirt',
+      offerImage: './assets/tshirts/pink.png',
+      productPrice: 16.99),
   Offer(
       name: 'T-Shirt Green',
       offerImage: './assets/tshirts/darkgreen.png',
@@ -30,9 +30,9 @@ final List<Offer> availableOffers = [
       offerImage: './assets/tshirts/orange.png',
       productPrice: 21.99),
   Offer(
-      name: 'Pinkes T-Shirt',
-      offerImage: './assets/tshirts/pink.png',
-      productPrice: 16.99),
+      name: 'Blaues T-Shirt',
+      offerImage: './assets/tshirts/darkblue.png',
+      productPrice: 24.99),
   Offer(
       name: 'Rotes T-Shirt',
       offerImage: './assets/tshirts/red.png',

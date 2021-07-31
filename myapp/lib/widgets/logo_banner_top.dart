@@ -14,7 +14,7 @@ class LogoBannerTop extends StatelessWidget {
           minWidth: 100, maxWidth: MediaQuery.of(context).size.width * 0.7),
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('./assets/Banner.png'),
+          image: AssetImage('./assets/websitebanner.png'),
         ),
       ),
     );
