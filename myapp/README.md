@@ -1,6 +1,7 @@
 # SmartBuy
 
 Eine Projektarbeit zum Modul Programmieren graphischer Oberflächen im Sommersemester 21 zum Thema Responsive Design
+Team bestehend aus Robin Scherer, Marco Schmitz, Falain Fongou-Zeukang und Lucas Schwöbel
 
 ## Anleitung
 
@@ -18,3 +19,7 @@ empfehlen wir zunächst eine Ausführung mit einem Webbrowser ihrer Wahl.
 Alternativ ist es auch möglich Android Studio und einen Emulator zu verwenden.
 Starten sie hierzu den Emulator des gewünschten Endgeräts und drücken sie Shift+F10, 
 oder den grünen Play Button um main.dart auszuführen
+
+### Autoren
+
+Marco Schmitz, Robin Scherer
